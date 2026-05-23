@@ -3,384 +3,531 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoMedia Design | Digital Product Design & Engineering</title>
-  <meta name="description" content="CoMedia Design is a premier digital product design and development agency. We craft digital solutions for companies that need to move.">
+  <title>CoMedia Design | Agentic OS Proposal</title>
+  <meta name="description" content="Agentic OS UX proposal submitted to Samsung Global UX Studio by Comedia Design.">
   
-  <!-- Preload fonts and critical images -->
+  <!-- Preload fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="theme-yellow">
 
-  <!-- Floating Glow Backgrounds for Hero and dark sections -->
-  <div class="glow-bg glow-pink"></div>
-  <div class="glow-bg glow-blue"></div>
-
-  <!-- Header / Navigation -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo-link" aria-label="CoMedia Design Home">
-        <img src="imgs/Logo.svg" alt="CoMedia logo" class="nav-logo-icon">
-      </a>
-      <nav class="nav-menu" aria-label="Main navigation" id="nav-menu">
-        <a href="#about" class="nav-link">ABOUT US</a>
-        <a href="#work" class="nav-link active">WORK</a>
-        <a href="#ai-thinking" class="nav-link">AI THINKING</a>
-        <a href="#creative-capital" class="nav-link">CREATIVE CAPITAL</a>
-        <a href="#insights" class="nav-link">INSIGHTS</a>
-        <a href="#contact" class="nav-link contact-btn">Let's chat</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
-    <div class="hero-container">
-      <!-- Left side small paragraph -->
-      <div class="hero-intro scroll-reveal">
-        <p class="hero-intro-text">
-          A creative agency that<br>
-          cuts straight to the work.
-        </p>
-      </div>
-      
-      <!-- Massive Hero Text Grid -->
-      <div class="hero-display scroll-reveal">
-        <h1 class="hero-title">
-          <span class="stroke-text">WE CRAFT DIGITAL</span><br>
-          <span class="filled-pink">SOLUTIONS</span> <span class="stroke-text">FOR</span><br>
-          <span class="stroke-text">COMPANIES THAT</span><br>
-          <span class="stroke-text">NEED</span> <span class="filled-blue">TO MOVE</span> <span class="filled-yellow-arrow">→</span>
-        </h1>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO WE ARE Section (Pink Background) -->
-  <section class="section-pink" id="about">
-    <div class="section-container text-center">
-      <span class="section-tag dark-tag scroll-reveal">WHO WE ARE</span>
-      <h2 class="section-title dark-text scroll-reveal">
-        A product team that <span class="highlight-yellow">designs</span>, builds, and ships.
-      </h2>
-      <div class="section-desc-wrapper scroll-reveal">
-        <p class="section-desc dark-text">
-          Whatever the context, whatever the problem. Across industries, stages and time zones.
-        </p>
-        <p class="section-desc dark-text">
-          No fixed formulas. Just sharp thinking and work that lasts.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO WE WORK WITH Section (Black Background) -->
-  <section class="section-black" id="work-with">
-    <div class="section-container grid-2">
-      <div class="work-with-content scroll-reveal">
-        <span class="section-tag pink-tag">WHO WE WORK WITH</span>
-        <h2 class="section-title filled-pink">From Startups<br>to Fortune 500</h2>
-        <p class="section-desc text-muted">
-          From pre-seed startups figuring out what to build, to Fortune 500 teams that need to move faster than their org allows — we meet you where you are.
-        </p>
-      </div>
-      <div class="work-with-visual scroll-reveal">
-        <!-- High-fidelity overlapping team/meeting image layout using actual assets -->
-        <div class="visual-stack">
-          <div class="visual-bg-card">
-            <!-- Simulated office meeting using beautiful mask background -->
-            <img src="imgs/Mask group.png" alt="Collaborative design sprint session" class="stack-img-back">
+  <!-- Core Deck Container -->
+  <div class="deck-container">
+    
+    <!-- Top Header Navigation (Figma Replica) -->
+    <header class="deck-header">
+      <div class="header-left">
+        <a href="#" class="header-logo-link" id="logo-link">
+          <div class="logo-wrapper">
+            <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="comedia-logo-svg">
+              <path d="M29.5063 31.0366C29.5558 31.1187 29.5842 31.2148 29.5842 31.3176C29.5842 31.5504 29.438 31.7494 29.2319 31.8284C26.1407 34.4329 22.1627 36 17.8222 36C7.97928 36 0 27.9411 0 18C0 8.05887 7.97928 0 17.8222 0C22.2463 0 26.2939 1.62808 29.4097 4.32338C29.4178 4.3304 29.4255 4.33862 29.4328 4.3479C29.5267 4.4485 29.5842 4.58382 29.5842 4.73264C29.5842 4.87531 29.5313 5.00558 29.4442 5.10475C29.4383 5.11299 29.4319 5.12044 29.4253 5.12699C27.5887 6.94015 26.1385 9.15097 25.2113 11.6216C25.2071 11.6328 25.2022 11.6437 25.1967 11.6544C25.1075 11.8459 24.9139 11.9786 24.6896 11.9786C24.5186 11.9786 24.3655 11.9015 24.2628 11.7801C22.6405 10.067 20.3547 9 17.8222 9C12.9008 9 8.91111 13.0294 8.91111 18C8.91111 22.9706 12.9008 27 17.8222 27C20.3513 27 22.6343 25.9359 24.2562 24.2269C24.3589 24.1008 24.5149 24.0203 24.6897 24.0203C24.9317 24.0203 25.1378 24.1746 25.2159 24.3906C26.1448 26.8603 27.5964 29.07 29.4342 30.8818C29.467 30.9141 29.491 30.9694 29.5063 31.0366Z" fill="currentColor"/>
+              <path d="M42.3972 27.128C47.3844 27.128 51.4273 23.0795 51.4273 18.0854C51.4273 13.0913 47.3844 9.04272 42.3972 9.04272C37.4101 9.04272 33.3672 13.0913 33.3672 18.0854C33.3672 23.0795 37.4101 27.128 42.3972 27.128Z" fill="currentColor"/>
+            </svg>
+            <span class="logo-text">COMEDIA</span>
           </div>
-          <div class="visual-front-card">
-            <!-- Small overlay with actual team photo asset -->
-            <img src="imgs/Ben.png" alt="Engineering review session" class="stack-img-front">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Yellow Styled Client Logos Row -->
-    <div class="logos-container scroll-reveal">
-      <div class="logos-grid">
-        <div class="logo-item"><img src="imgs/google.svg" alt="Google" class="yellow-logo"></div>
-        <div class="logo-item brand-logo-text">Microsoft</div>
-        <div class="logo-item"><img src="imgs/atlassian_logo.svg.svg" alt="Atlassian" class="yellow-logo"></div>
-        <div class="logo-item brand-logo-text">zoom</div>
-        <div class="logo-item brand-logo-text">WINNEBAGO</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUR TAKE ON AI Section (Yellow Background) -->
-  <section class="section-yellow" id="ai-thinking">
-    <div class="section-container grid-2">
-      <div class="ai-content-left scroll-reveal">
-        <span class="section-tag dark-tag">OUR TAKE ON AI</span>
-        <h2 class="ai-title dark-text">
-          Not a shortcut,<br>
-          not a gimmick.<br>
-          <span class="filled-blue">AI is part of how<br>we work.</span>
-        </h2>
-      </div>
-      <div class="ai-content-right scroll-reveal">
-        <p class="section-desc dark-text">
-          We use it where it earns its place. Where it doesn't, we don't force it.
-        </p>
-        <a href="#work" class="ai-link dark-text">
-          How we think about that <span class="ai-arrow">→</span>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- HOW WE DO IT Section (Black Background) -->
-  <section class="section-black" id="creative-capital">
-    <div class="section-container grid-2 items-start">
-      <div class="how-we-do-left scroll-reveal">
-        <span class="section-tag yellow-tag">THE MODEL</span>
-        <p class="section-desc text-muted mt-2">
-          We embed with your team, flex with your roadmap, and scale up or down without the overhead.
-        </p>
-      </div>
-      <div class="how-we-do-right scroll-reveal">
-        <span class="section-tag yellow-tag">HOW WE DO IT</span>
-        <h2 class="section-title text-white mt-2">
-          We work inside your process, not above it. From the first hard conversation to the moment it ships — we fit the work, not the other way around.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <!-- Selected Work Grid Section (Black Background) -->
-  <section class="portfolio-section" id="work">
-    <div class="portfolio-container">
-      
-      <!-- Project Case Studies Grid -->
-      <div class="case-studies-grid">
-        
-        <!-- Project 1: MAURA -->
-        <article class="case-study-card scroll-reveal" data-project="maura">
-          <div class="card-visual">
-            <img src="imgs/Maura Website.png" alt="Maura luxury lookbook fashion app mockup" class="card-img">
-            <div class="card-overlay"></div>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">MAURA</h3>
-            <p class="card-subtitle">The Future of Luxury Shopping</p>
-          </div>
-        </article>
-
-        <!-- Project 2: FLOZ -->
-        <article class="case-study-card scroll-reveal" data-project="floz">
-          <div class="card-visual">
-            <img src="imgs/Look Matcher.png" alt="Floz water tracking app user interface" class="card-img">
-            <div class="card-overlay"></div>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">FLOZ</h3>
-            <p class="card-subtitle">Technology, Beautifully Built</p>
-          </div>
-        </article>
-
-        <!-- Project 3: GOOGLE -->
-        <article class="case-study-card scroll-reveal" data-project="google">
-          <div class="card-visual">
-            <!-- Simulated login dashboard using beautiful face profile style -->
-            <img src="imgs/Mask group.png" alt="Google Agentic AI workspace" class="card-img" style="filter: brightness(0.6) saturate(1.2);">
-            <div class="card-logo-overlay">
-              <img src="imgs/google.svg" alt="Google" class="visual-logo">
-            </div>
-            <div class="card-overlay"></div>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">GOOGLE</h3>
-            <p class="card-subtitle">Agentic AI at the Core</p>
-          </div>
-        </article>
-
-        <!-- Project 4: MACY'S -->
-        <article class="case-study-card scroll-reveal" data-project="macys">
-          <div class="card-visual">
-            <img src="imgs/Discover.png" alt="Macy's tomorrow's retail experiences" class="card-img">
-            <div class="card-overlay"></div>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">MACY'S</h3>
-            <p class="card-subtitle">Designing Tomorrow's Retail Experiences</p>
-          </div>
-        </article>
-
-        <!-- Project 5: FUTURE CARDS -->
-        <article class="case-study-card scroll-reveal" data-project="future-cards">
-          <div class="card-visual">
-            <!-- Beautiful card grid layout simulating AI brand design decks -->
-            <div class="card-grid-visual-simulation">
-              <div class="visual-deck-card pink-deck-card">Brand Overview</div>
-              <div class="visual-deck-card orange-deck-card">Client Brief</div>
-              <div class="visual-deck-card purple-deck-card">Brand Storytelling</div>
-              <div class="visual-deck-card green-deck-card">Brand Purpose</div>
-              <div class="visual-deck-card magenta-deck-card">Naming</div>
-              <div class="visual-deck-card yellow-deck-card">Strategy</div>
-            </div>
-            <div class="card-overlay"></div>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">FUTURE CARDS</h3>
-            <p class="card-subtitle">Where AI Meets Brand Design</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- YOU'LL LOVE WORKING WITH US Section (Blue Background) -->
-  <section class="section-blue-cta" id="insights">
-    <div class="section-container text-center py-5 scroll-reveal">
-      <h2 class="cta-title">
-        You'll love working with us <span class="cta-arrow">→</span>
-      </h2>
-    </div>
-  </section>
-
-  <!-- Footer (Blue Background) -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-logo scroll-reveal">
-        <img src="imgs/Brand Name.svg" alt="comedia" class="footer-logo-wordmark">
-      </div>
-      <div class="footer-nav scroll-reveal">
-        <a href="#about">About Us</a>
-        <a href="#work">Work</a>
-        <a href="#ai-thinking">AI Thinking</a>
-        <a href="#creative-capital">Creative Capital</a>
-        <a href="#insights">Insights</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-bottom scroll-reveal">
-        <div class="footer-copyright">
-          <span>&copy; CoMedia Design 2026</span>
-          <a href="#">Privacy Policy</a>
-          <span class="divider">|</span>
-          <a href="#">Terms of Service</a>
+      <nav class="header-nav" aria-label="Deck sections">
+        <div class="nav-links-container">
+          <button class="nav-tab active" data-target-slide="1" data-category="ENGAGEMENT">ENGAGEMENT</button>
+          <button class="nav-tab" data-target-slide="7" data-category="PROTOTYPES">PROTOTYPES</button>
+          <button class="nav-tab" data-target-slide="11" data-category="METHODOLOGY">METHODOLOGY</button>
+          <button class="nav-tab" data-target-slide="16" data-category="PHASES">PHASES</button>
+          <button class="nav-tab" data-target-slide="19" data-category="TEAM">TEAM</button>
         </div>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn Profile">
-            <!-- Precise inline LinkedIn icon matching design -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-        </div>
+        <div class="active-indicator-bar" id="indicator-bar"></div>
+      </nav>
+      <div class="header-right">
+        <button class="chat-btn" id="contact-trigger">LET'S CHAT</button>
       </div>
-    </div>
-  </footer>
+    </header>
 
-  <!-- Case Study Dialog (Full-Screen Accessible Slide-In Drawer) -->
-  <dialog class="modal-drawer" id="project-modal" aria-modal="true" aria-labelledby="modal-title">
-    <div class="drawer-wrapper">
-      <button class="drawer-close-btn" aria-label="Close case study" id="modal-close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="drawer-scroll-container">
-        
-        <header class="drawer-header">
-          <span class="drawer-tag" id="modal-tag">Tag</span>
-          <h2 class="drawer-title" id="modal-title">Project Title</h2>
-          <p class="drawer-subtitle" id="modal-subtitle">Project Subtitle</p>
-        </header>
+    <!-- Slide Navigation Arrows -->
+    <button class="arrow-btn arrow-left" id="arrow-prev" aria-label="Previous Slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="arrow-btn arrow-right" id="arrow-next" aria-label="Next Slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
-        <!-- Visual Hero (Image or Video) -->
-        <div class="drawer-hero-visual" id="modal-visual-container">
-          <!-- Dynamically filled -->
-        </div>
+    <!-- Main Slide Canvas -->
+    <main class="slide-canvas" id="slide-canvas">
+      <!-- Active slide contents will be injected here dynamically by JS -->
+    </main>
 
-        <!-- Details Grid -->
-        <div class="drawer-details-grid">
-          <div class="drawer-main-content">
-            <section class="drawer-section">
-              <h3 class="drawer-section-title">The Challenge</h3>
-              <p id="modal-challenge-text">Challenge description goes here.</p>
-            </section>
-            <section class="drawer-section">
-              <h3 class="drawer-section-title">Our Approach</h3>
-              <p id="modal-approach-text">Approach description goes here.</p>
-            </section>
-            <section class="drawer-section">
-              <h3 class="drawer-section-title">The Impact</h3>
-              <p id="modal-impact-text">Impact description goes here.</p>
-            </section>
-          </div>
-          
-          <aside class="drawer-sidebar">
-            <div class="sidebar-block">
-              <h4 class="sidebar-label">Client</h4>
-              <p class="sidebar-value" id="modal-client-value">Client Name</p>
-            </div>
-            <div class="sidebar-block">
-              <h4 class="sidebar-label">Core Capabilities</h4>
-              <ul class="sidebar-list" id="modal-capabilities-list">
-                <!-- Dynamically filled -->
-              </ul>
-            </div>
-            <div class="sidebar-block">
-              <h4 class="sidebar-label">Services Provided</h4>
-              <p class="sidebar-value" id="modal-services-value">Design, Prototyping, Strategy</p>
-            </div>
-          </aside>
-        </div>
-
+    <!-- Keyboard Helpers & Indicator Bottom Pinned -->
+    <footer class="deck-footer-bar">
+      <div class="footer-left-info">
+        <span class="slide-counter" id="slide-counter">01 / 21</span>
       </div>
-    </div>
-  </dialog>
+      <div class="footer-right-info">
+        <span class="key-hint">Press Arrow Keys or Space to Navigate</span>
+      </div>
+    </footer>
 
-  <!-- Interactive Discovery / Contact Overlay Dialog -->
-  <dialog class="modal-drawer" id="contact-modal" aria-modal="true" aria-labelledby="contact-modal-title">
-    <div class="drawer-wrapper">
-      <button class="drawer-close-btn" aria-label="Close dialog" id="contact-close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="drawer-scroll-container">
-        <header class="drawer-header">
-          <span class="drawer-tag">Let's talk</span>
-          <h2 class="drawer-title" id="contact-modal-title">Start a project with us</h2>
-          <p class="drawer-subtitle">Whether you're a pre-seed startup or a Fortune 500 team, we'd love to hear from you.</p>
-        </header>
+  </div>
 
-        <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Inquiry submitted! We\'ll be in touch shortly.'); this.reset(); document.getElementById('contact-modal').close(); document.body.style.overflow='';">
+  <!-- Contact Dialog (Accessible Modal) -->
+  <dialog class="modal-dialog" id="contact-dialog">
+    <div class="modal-wrapper">
+      <button class="modal-close" id="modal-close" aria-label="Close dialog">✕</button>
+      <div class="modal-content">
+        <span class="modal-tag">GET IN TOUCH</span>
+        <h2 class="modal-title">LET'S BUILD THE FUTURE OS</h2>
+        <p class="modal-desc">Interested in discussing agentic interfaces or research frameworks? Drop us a line.</p>
+        <form class="modal-form" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent!'); document.getElementById('contact-dialog').close();">
           <div class="form-group">
-            <label for="contact-name">Your Name</label>
-            <input type="text" id="contact-name" required placeholder="Name">
+            <label for="form-name">Name</label>
+            <input type="text" id="form-name" required placeholder="Your name">
           </div>
           <div class="form-group">
-            <label for="contact-email">Email Address</label>
-            <input type="email" id="contact-email" required placeholder="name@company.com">
+            <label for="form-email">Email</label>
+            <input type="email" id="form-email" required placeholder="you@domain.com">
           </div>
           <div class="form-group">
-            <label for="contact-company">Company / Organization</label>
-            <input type="text" id="contact-company" placeholder="Company Name">
+            <label for="form-msg">Message</label>
+            <textarea id="form-msg" rows="4" required placeholder="Tell us about your project..."></textarea>
           </div>
-          <div class="form-group">
-            <label for="contact-msg">Tell us about your challenge...</label>
-            <textarea id="contact-msg" rows="4" required placeholder="What are you trying to build?"></textarea>
-          </div>
-          <button type="submit" class="btn-submit-form">Send inquiry →</button>
+          <button type="submit" class="form-submit-btn">Send Message</button>
         </form>
       </div>
     </div>
   </dialog>
 
+  <!-- Complete 21 Slides Database -->
+  <script>
+    window.SLIDE_DATA = [
+      {
+        id: 1,
+        category: "ENGAGEMENT",
+        title: "AGENTIC OS",
+        subtitle: "Submitted to Samsung Global UX Studio.",
+        tag: "Comedia Design - April 2026",
+        layout: "title-slide",
+        visualUrl: "imgs/Mask group.png"
+      },
+      {
+        id: 2,
+        category: "ENGAGEMENT",
+        title: "WHAT MAKES US DIFFERENT",
+        layout: "two-column-quote",
+        quote: "We didn't wait for the brief to tell us what to find.",
+        blocks: [
+          {
+            heading: "INNOVATION WORK IS WHAT WE DO.",
+            text: "Not as a side practice, but as the core of how we operate: early-stage, high-ambiguity projects where the brief is a hypothesis and the output has to earn its way into a roadmap."
+          },
+          {
+            heading: "WE TREAT PROTOTYPES AS RESEARCH INSTRUMENTS.",
+            text: "Build and research run in parallel from week one. Each loop produces validated findings and advancing concept fidelity at the same time."
+          }
+        ]
+      },
+      {
+        id: 3,
+        category: "ENGAGEMENT",
+        title: "THE AGENTIC OS CHALLENGE",
+        layout: "two-column-quote",
+        quote: "This is a trust architecture challenge.",
+        blocks: [
+          {
+            heading: "EVERY DESIGN ASSUMPTION BUILT FOR APPS BREAKS HERE.",
+            text: "Apps respond when asked. An agentic OS acts before the user does. That changes everything: how trust is built, how consent is managed, how the UI itself scales from static dashboards to active, high-ambiguity status displays."
+          },
+          {
+            heading: "THE HARD PART ISN'T THE CAPABILITY. IT'S THE RELATIONSHIP.",
+            text: "An agentic OS that users don't trust is worse than useless. One they trust too much will eventually fail them. The design challenge is building a system that earns delegation gradually, handles failure gracefully, and knows when to stay invisible."
+          }
+        ]
+      },
+      {
+        id: 4,
+        category: "ENGAGEMENT",
+        title: "OUR HYPOTHESES — PT. 1",
+        subtitle: "Designing for the outcome, not the feature.",
+        layout: "three-column",
+        columns: [
+          {
+            heading: "Intelligence should be felt, not named.",
+            text: "Two exceptions: first-time navigation to a new domain, and when something goes wrong. Outside those moments, it's infrastructure."
+          },
+          {
+            heading: "The right outcome feels simpler, not more capable.",
+            text: "The agentic layer absorbs complexity rather than surfacing it. Users do less, see less. Because the system already handled it."
+          },
+          {
+            heading: "Trust follows a U-curve, not a straight line.",
+            text: "A well-handled failure builds trust faster than ten successes. That changes everything about recovery UX."
+          }
+        ]
+      },
+      {
+        id: 5,
+        category: "ENGAGEMENT",
+        title: "OUR HYPOTHESES — PT. 2",
+        subtitle: "The relationship layer most teams never design for.",
+        layout: "three-column",
+        columns: [
+          {
+            heading: "Silence is a feature, not an absence.",
+            text: "In a traditional app, silence means nothing is happening. In an agentic system, silence means the system handled it. Designing for that distinction is not optional.",
+            icon: "sun"
+          },
+          {
+            heading: "Consent is a relationship, not a checkbox.",
+            text: "Traditional apps ask once and move on. An agentic OS earns permission continuously.",
+            icon: "heart"
+          },
+          {
+            heading: "The relationship starts before the user does anything.",
+            text: "Before the first delegation, the system is already watching. That pre-engagement window is where trust is formed invisibly.",
+            icon: "nodes"
+          }
+        ]
+      },
+      {
+        id: 6,
+        category: "ENGAGEMENT",
+        title: "ROADMAP OVERVIEW",
+        subtitle: "Revised $400k framework with transparent SOW scoping.",
+        layout: "roadmap-table",
+        rows: [
+          {
+            scope: "SOW1",
+            phases: "Phases 1 — 2",
+            focus: "Research foundation, archetype validation, concept design experimentation",
+            timeline: "June 22 — Late September 2026"
+          },
+          {
+            scope: "SOW2",
+            phases: "Phase 3",
+            focus: "Interaction model, domain expansion, A2A prototyping, feasibility",
+            timeline: "October — November 1, 2026"
+          }
+        ]
+      },
+      {
+        id: 7,
+        category: "PROTOTYPES",
+        title: "WHY PROTOTYPES COME FIRST",
+        layout: "two-column-quote",
+        quote: "What's the fastest way to build something real?",
+        blocks: [
+          {
+            heading: "OTHER AGENCIES RESEARCH, THEN DESIGN.",
+            text: "We build first and use the prototype as the research instrument. A working concept in front of a real participant generates richer data in forty minutes than two weeks of desk research."
+          },
+          {
+            heading: "THE BRIEF FOLLOWS THE PARTICIPANT.",
+            text: "The prototype brief is written after the first three to four sessions, shaped by what participants tell us. Each iteration produces a tighter archetype model and a higher-fidelity concept at the same time. Live prototypes from week three."
+          }
+        ]
+      },
+      {
+        id: 8,
+        category: "PROTOTYPES",
+        title: "COGNITIVE INTERACTION PREVIEW",
+        subtitle: "NYC Trip Mockup",
+        layout: "mockup-slide",
+        scenario: "nyctrip",
+        bgImage: "imgs/bob-brewer-Aqd7GUn48jI-unsplash.jpg", // From Downloads
+        qrCode: "imgs/adobe-express-qr-code.png",
+        phoneContent: {
+          title: "New York Trip",
+          date: "Sun-Weds this week",
+          items: [
+            { title: "Flight SFO → JFK", desc: "Flight Confirmed • Tomorrow at 7:15am" },
+            { title: "Marriott Midtown", desc: "Check-in Tuesday • 3:00pm" }
+          ],
+          nudge: "Go in now • 40m ahead on your left",
+          handledCount: 2
+        }
+      },
+      {
+        id: 9,
+        category: "PROTOTYPES",
+        title: "INTELLIGENT ROUTING MOCKUP",
+        subtitle: "Zara Active Assistance",
+        layout: "mockup-slide",
+        scenario: "zara",
+        bgImage: "imgs/bob-brewer-Aqd7GUn48jI-unsplash.jpg", // city backdrop
+        qrCode: "imgs/adobe-express-qr-code.png",
+        phoneContent: {
+          title: "Zara",
+          date: "30% sale ends tonight",
+          items: [
+            { title: "Remind me at 5pm", desc: "Active location notification" },
+            { title: "Browse online", desc: "zara.com catalog" }
+          ],
+          nudge: "You browsed here 3 weeks ago and didn't buy",
+          handledCount: 2
+        }
+      },
+      {
+        id: 10,
+        category: "PROTOTYPES",
+        title: "SYNTHETIC USER TESTING",
+        subtitle: "A structured research environment for stress-testing agentic scenarios.",
+        layout: "synthetic-testing",
+        visualUrl: "imgs/Recovery Card.png",
+        text: "Each synthetic participant carries a defined belief profile and gets interviewed by an AI facilitator across multiple scenarios and archetypes — surfacing reasoning patterns, trust responses, and failure reactions."
+      },
+      {
+        id: 11,
+        category: "METHODOLOGY",
+        title: "COGNITIVE INTERVIEWS",
+        layout: "two-column-quote",
+        quote: "Preference research tells you what someone would use. We need to know what they believe.",
+        blocks: [
+          {
+            heading: "WE'RE NOT ASKING WHAT THEY'D USE. WE'RE ASKING WHAT THEY BELIEVE.",
+            text: "The brief's six learning goals ask how people reason about delegation and trust, not what they prefer. Cognitive interviews get to the causal story: what participants believe is happening when a system acts, and what story they tell themselves when it goes wrong."
+          },
+          {
+            heading: "THE QUESTION THAT GETS TO THE ARCHETYPE ISN'T 'WHAT'. IT'S 'WHY'.",
+            text: "'I don't trust it to book my flights' is a preference signal. 'What do you believe would happen if it did?' gets to the archetype. That distinction shapes every design decision in our research programme."
+          }
+        ]
+      },
+      {
+        id: 12,
+        category: "METHODOLOGY",
+        title: "PARTICIPANT STRATEGY",
+        layout: "two-column-quote",
+        quote: "Meaningful selection of different levels of delegation experience.",
+        blocks: [
+          {
+            heading: "12 TO 16 PARTICIPANTS, TWO SESSIONS EACH.",
+            text: "From users with no active AI tools, the delegation floor, through passive smart device users, active daily AI users, and developer-adjacent participants at the forward edge of autonomy tolerance."
+          },
+          {
+            heading: "SCREENED FOR REAL FAILURE.",
+            text: "Every participant is screened for two criteria: they have experienced an AI tool getting something meaningfully wrong, and they use their phone as a primary device."
+          }
+        ]
+      },
+      {
+        id: 13,
+        category: "METHODOLOGY",
+        title: "THE RESEARCH LOOP",
+        layout: "two-column-quote",
+        quote: "We don't show the prototype until we know what we're testing.",
+        blocks: [
+          {
+            heading: "SESSION 1: BASELINE",
+            text: "Establishes each participant's belief structure before any design exposure. No prototype, no contamination. We reconstruct a real-world scenario from their life that hit the trust/delegation thresholds. We close with a future-state scenario and map baseline emotional texture: relief, curiosity, or discomfort."
+          },
+          {
+            heading: "SESSION 2: INTERVENTION",
+            text: "Shows the current prototype and runs a failure scenario. We watch for confirmation bias, error recovery, and changes in the baseline mental model. Session 1 and 2 test whether the prototype moved the needle."
+          }
+        ]
+      },
+      {
+        id: 14,
+        category: "METHODOLOGY",
+        title: "RECOVERY UX",
+        subtitle: "A concept without a failure state isn't complete.",
+        layout: "three-column",
+        columns: [
+          {
+            heading: "A well-handled failure builds more trust than ten successes.",
+            text: "Every PoC includes at least one recovery scenario. Not as an edge case, but as a core design requirement. The system catches problems before the user does, corrects without drama, and never makes the user feel supervised."
+          },
+          {
+            heading: "How you recover depends entirely on who you're recovering.",
+            text: "A highly trusting user who hits one high-stakes failure is harder to recover than a skeptic who expects things to go wrong. The recovery UX has to match the archetype. A single universal pattern won't hold."
+          },
+          {
+            heading: "Catch, correct, and notify without drama.",
+            text: "Failure is not an exception state — it is a primary design surface. The UI transitions smoothly between autonomic operations and guided corrections, making the friction educational."
+          }
+        ]
+      },
+      {
+        id: 15,
+        category: "METHODOLOGY",
+        title: "SYNTHESIS & ARCHETYPE CARDS",
+        layout: "two-column-quote",
+        quote: "Research and design don't wait for each other. They run in parallel and feed each other.",
+        blocks: [
+          {
+            heading: "AMBIGUITY ISN'T A PROBLEM. IT'S A SIGNAL.",
+            text: "After each round of sessions, the team independently reviews what they heard. When they disagree on what an observation means, that's not a problem to fix. It means the finding needs more pressure in the next session."
+          },
+          {
+            heading: "BELIEF PATTERN, NOT DEMOGRAPHIC.",
+            text: "Affinity mapping runs by causal belief pattern, not demographic. 'It learned my behavior' and 'it guessed' are two different attributions, and that difference matters. The six working archetypes are a starting structure. If the evidence produces a different set, we present it."
+          }
+        ]
+      },
+      {
+        id: 16,
+        category: "PHASES",
+        title: "PHASE 1 DELIVERABLES",
+        layout: "deliverables-table",
+        rows: [
+          {
+            deliverable: "Mental Model Archetype Cards",
+            description: "Validated from real participant evidence. Structured for machine readability, traceable to specific qualitative findings."
+          },
+          {
+            deliverable: "PoC Explorations (2-3)",
+            description: "Across Home Screen, AOD, and Lock Screen. Each includes at least one recovery scenario."
+          },
+          {
+            deliverable: "A2A Coordination Legibility Framework",
+            description: "Maps the problem space for agent-to-agent interaction across the engagement."
+          },
+          {
+            deliverable: "A2A Design Guidelines",
+            description: "Governs how agent handoffs, task delegation, and error attribution are communicated across Phase 2 and 3 surfaces."
+          },
+          {
+            deliverable: "Monthly HQ Shareouts",
+            description: "PPTX and video formatted for Knox-only distribution throughout SOW1."
+          }
+        ]
+      },
+      {
+        id: 17,
+        category: "PHASES",
+        title: "PHASE 2 DELIVERABLES",
+        layout: "deliverables-table",
+        rows: [
+          {
+            deliverable: "Agent Mode Concepts (3 directions)",
+            description: "Conservative, moderate, and radical directions for agentic interactions. Each user-tested and mapped to specific archetype scenarios."
+          },
+          {
+            deliverable: "Card Pattern Library",
+            description: "Reusable UI/UX patterns for surfacing AI-initiated suggestions. Documents appearance, dismissal logic, and delegation acceptance."
+          },
+          {
+            deliverable: "Transparency UX Patterns",
+            description: "Covers provenance indicators, confidence signals, attribution, and intervention points."
+          },
+          {
+            deliverable: "Hub Navigation and Coordination Patterns",
+            description: "How users navigate concurrent agent tasks — handoff legibility, task status, and intervention points."
+          },
+          {
+            deliverable: "Phase 2 Executive Shareout",
+            description: "Phase deliverables formatted for internal HQ executive review."
+          }
+        ]
+      },
+      {
+        id: 18,
+        category: "PHASES",
+        title: "PHASE 3 DELIVERABLES",
+        layout: "deliverables-table",
+        rows: [
+          {
+            deliverable: "A2A Prototype",
+            description: "Intent delegation from orchestration layer to domain agent, includes handoff pattern, trust indicators, and at least one recovery scenario."
+          },
+          {
+            deliverable: "Agent Mode Prototype Video",
+            description: "Observation-mode UX with visibility and control. Uses validated archetypes to determine what surfaces and what stays invisible."
+          },
+          {
+            deliverable: "A2A Gateway Strategy Deck",
+            description: "Principles and design decisions for A2A behavior. Includes a draft governance framework for agent behavior within the Galaxy ecosystem."
+          },
+          {
+            deliverable: "Technical Feasibility Report",
+            description: "Orchestration landscape assessment, constraints, viable pathways, and named assumptions."
+          },
+          {
+            deliverable: "One UI Envisioning Strategy",
+            description: "Vision for One UI 10.5 through 11.5. Written for VIP and HQ leadership."
+          }
+        ]
+      },
+      {
+        id: 19,
+        category: "TEAM",
+        title: "TRUSTED BY THE BEST",
+        subtitle: "Startups to Fortune 10. Same standard of work.",
+        layout: "trusted-logos",
+        logos: [
+          { name: "Microsoft" },
+          { name: "Vodafone", file: "imgs/Logo.svg.svg" },
+          { name: "Sharp / NEC", file: "imgs/nec_corporation_logo.svg.svg" },
+          { name: "VMware" },
+          { name: "Winnebago" },
+          { name: "Zoom" },
+          { name: "Macy's", file: "imgs/macys.svg" },
+          { name: "Google", file: "imgs/google.svg" },
+          { name: "Atlassian", file: "imgs/atlassian_logo.svg.svg" },
+          { name: "Ericsson", file: "imgs/ericsson_logo.svg.svg" },
+          { name: "Neom" },
+          { name: "The World Bank" }
+        ]
+      },
+      {
+        id: 20,
+        category: "TEAM",
+        title: "THE TEAM",
+        layout: "team-grid",
+        team: [
+          {
+            name: "Chris Basey",
+            role: "Creative Director, Strategic Lead",
+            bio: "25 years across Google, Atlassian, GE Aviation, Winnebago, and Ericsson. Has run agentic build engagements on Google Checks, Firebase Studio, and Maura."
+          },
+          {
+            name: "Ben Oertel",
+            role: "Chief Engineer",
+            bio: "Builds functional agentic systems. Deep Gemini experience. Currently building depth in the OpenClaw and Moltbook/Meta stack."
+          },
+          {
+            name: "Ken Yang",
+            role: "Head of Product",
+            bio: "Research methodology lead. California Bar-certified. Enterprise and consumer research leadership."
+          },
+          {
+            name: "Irene Sasaki",
+            role: "Lead Product Designer",
+            bio: "Concept direction, archetype card visual system, design system production."
+          },
+          {
+            name: "Ginevra Kirkland",
+            role: "Head of Content and Synthesis",
+            bio: "Archetype card narrative, executive shareout writing, HQ video production."
+          },
+          {
+            name: "Trina Tuazon",
+            role: "Senior Product Designer",
+            bio: "Phase 2 and 3 concept and interaction model support."
+          }
+        ]
+      },
+      {
+        id: 21,
+        category: "TEAM",
+        title: "WHY THIS WORKS",
+        subtitle: "We build early and move quickly, with continuous iteration shaped by research.",
+        layout: "two-column-quote",
+        quote: "We don't wait until the end to show you something.",
+        blocks: [
+          {
+            heading: "Six months. Two SOWs. Live prototypes from week three.",
+            text: "Other agencies will describe what they will research and then design. We will show what we have already built and explain how we learned from it. The prototypes come first. The research validates, breaks, or redirects them."
+          }
+        ]
+      }
+    ];
+  </script>
   <script src="index.js"></script>
 </body>
 </html>

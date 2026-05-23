@@ -1,327 +1,371 @@
 /* ==========================================================================
-   CoMedia Premium Portfolio Core Javascript Logic - Home2.png Replica
+   CoMedia Premium Presentation Engine (Figma frame-115 Replica)
    ========================================================================== */
 
-// 1. Case Studies Data Store (Maura, Floz, Google, Macy's, Future Cards)
-const caseStudiesData = {
-  maura: {
-    title: "MAURA",
-    subtitle: "The Future of Luxury Shopping",
-    tag: "AI & Retail Curation",
-    client: "Maura Brand Co.",
-    services: "Interaction Design, Interface Prototyping, Mobile Architecture",
-    capabilities: [
-      "Fixed-Frame iOS Prototype Design",
-      "Parallax Brand logo row",
-      "High-speed Faststart Video streaming",
-      "Curated Lookbooks 2x2 grid"
-    ],
-    visualType: "image",
-    visualUrl: "imgs/Maura Website.png",
-    challenge: "Maura sought to redesign the mobile luxury fashion discovery model. Traditional e-commerce apps feel cluttered, pushing dense text lists instead of letting stunning brand imagery and video assets speak. The challenge was to construct a high-performance, fluid, and cinematic swipe feed on iOS devices.",
-    approach: "We co-designed an elegant React/Vite interface featuring a custom mobile layout shell. We structured dynamic card feeds with smooth slide animations driven by interactive spring physics, giving the product a premium editorial layout. We optimized video streams in faststart format to load instantly.",
-    impact: "Our high-fidelity interactive prototype successfully demonstrated key lookbook curation features, receiving immediate signoff from brand partners and proving the viability of the mobile interface."
-  },
-  
-  floz: {
-    title: "FLOZ",
-    subtitle: "Technology, Beautifully Built",
-    tag: "Connected Products & Utilities",
-    client: "Floz Hydration",
-    services: "IoT Interface Engineering, Dashboard Design, Asset Curation",
-    capabilities: [
-      "Real-time water sync visualizations",
-      "Responsive dashboard structures",
-      "Custom SVG icon set",
-      "Vibrant dark mode palette"
-    ],
-    visualType: "image",
-    visualUrl: "imgs/Look Matcher.png",
-    challenge: "Floz wanted to launch a premium utility dashboard for connected smart bottles. Existing utility apps look plain and lack emotional connection. We needed to design an interface that makes tracking daily hydration goals feel satisfying and visually stunning.",
-    approach: "We built an ultra-slick dark mode dashboard with backdrop-blur cards and smooth progress transitions. The dashboard synchronizes daily hydration data instantly with custom fluid animations that react to active touch states.",
-    impact: "The designed prototype elevated user testing satisfaction ratings to 94% and established the foundational design tokens for the entire physical product launch."
-  },
-  
-  google: {
-    title: "GOOGLE",
-    subtitle: "Agentic AI at the Core",
-    tag: "Enterprise Systems",
-    client: "Google LLC",
-    services: "Interaction Design, Persona Mapping, Web Application Redesign",
-    capabilities: [
-      "AI-powered work extraction",
-      "Complex data layout simplification",
-      "Keyboard-first navigation model",
-      "Responsive split-pane interfaces"
-    ],
-    visualType: "image",
-    visualUrl: "imgs/Mask group.png",
-    challenge: "Google's internal security and developer operations handle complex database inputs, causing severe visual clutter and cognitive fatigue. The challenge was to redesign key productivity consoles to simplify petabyte-scale data flows.",
-    approach: "We created a streamlined split-pane architecture. The layout isolates core tasks on the left, displaying interactive details and diagram visualizations dynamically on the right, supported by a keyboard-first navigation pattern.",
-    impact: "The redesign reduced daily task completion times by 32% across primary user cohorts and is currently being deployed inside enterprise administration consoles."
-  },
-  
-  macys: {
-    title: "MACY'S",
-    subtitle: "Designing Tomorrow's Retail Experiences",
-    tag: "AI & Omnichannel Personalization",
-    client: "Macy's, Inc.",
-    services: "UX/UI Design, Product Strategy, Consumer Prototyping",
-    capabilities: [
-      "AI-powered Styling Companion",
-      "In-store interactive mapping",
-      "Dynamic personalization grids",
-      "Gen Z customer research integration"
-    ],
-    visualType: "image",
-    visualUrl: "imgs/Discover.png",
-    challenge: "Macy's needed a fresh digital experience to re-engage younger shopper demographics. The challenge was to connect mobile curation and online styling smoothly with the physical store visit experience.",
-    approach: "We prototyped an AI 'Style Companion' that learns customer preferences in real-time through intuitive visual swipes, transforming the mobile experience into a personalized styling catalog synced with physical store layouts.",
-    impact: "Our designs were successfully launched as an in-store pilot in major flagship locations, resulting in a 28% increase in younger audience engagement rates."
-  },
-  
-  "future-cards": {
-    title: "FUTURE CARDS",
-    subtitle: "Where AI Meets Brand Design",
-    tag: "Generative Design Frameworks",
-    client: "CoMedia Labs",
-    services: "Brand Strategy, AI Tool Research, Interaction Design",
-    capabilities: [
-      "Dynamic card generation UI",
-      "Color-coded priority ramps",
-      "Fluid drag and drop mockups",
-      "Design tokens system mapping"
-    ],
-    visualType: "image",
-    visualUrl: "imgs/Home2.png",
-    challenge: "As AI tools emerge in creative industries, agencies need robust frameworks to quickly brainstorm and represent brand parameters (Purpose, Naming, Strategy) visually.",
-    approach: "We designed an interactive card generation interface showing color-coded 'Future Cards'. Creators can easily arrange and configure primary brand blocks to auto-generate beautiful strategic documents.",
-    impact: "The Future Cards module is now a core brainstorming tool utilized inside our client workshops, accelerating initial ideation phases by 3x."
-  }
+let currentSlideIndex = 0;
+const slides = window.SLIDE_DATA || [];
+
+// Category to CSS Theme class mapping
+const categoryThemes = {
+  "ENGAGEMENT": "theme-yellow",
+  "PROTOTYPES": "theme-burgundy",
+  "METHODOLOGY": "theme-teal",
+  "PHASES": "theme-green",
+  "TEAM": "theme-blue"
 };
 
-// 2. Navigation Scroll Handling
-function handleScroll() {
-  const navbar = document.getElementById('navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section, footer');
+// SVG Icon Templates for Slide Elements
+const SVG_ICONS = {
+  sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>`,
+  heart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>`,
+  nodes: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>`
+};
+
+// Core Slide Content Injector/Renderer
+function renderSlide(index) {
+  const canvas = document.getElementById("slide-canvas");
+  if (!canvas || !slides[index]) return;
+
+  const data = slides[index];
   
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  // Set Category Theme Class
+  document.body.className = categoryThemes[data.category] || "theme-yellow";
+  
+  // Render based on layout type
+  let contentHtml = "";
+
+  if (data.layout === "title-slide") {
+    contentHtml = `
+      <div class="slide-content-wrapper layout-title-slide">
+        <div class="title-info-col">
+          <span class="title-tag-line">${data.tag}</span>
+          <h1 class="hero-main-title">${data.title}</h1>
+          <p class="hero-sub-title">${data.subtitle}</p>
+        </div>
+        <div class="title-visual-col">
+          <img src="${data.visualUrl}" class="title-visual-img" alt="Agentic OS Submitted to Samsung visual image">
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "two-column-quote") {
+    const blocksHtml = data.blocks.map(b => `
+      <div class="info-block-cell">
+        <h3 class="cell-heading">${b.heading}</h3>
+        <p class="cell-paragraph">${b.text}</p>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-two-column-quote">
+        <div class="content-blocks-col">
+          <h2 class="main-title-text">${data.title}</h2>
+          ${blocksHtml}
+        </div>
+        <div class="quote-blocks-col">
+          <blockquote class="giant-side-quote">"${data.quote}"</blockquote>
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "three-column") {
+    const colsHtml = data.columns.map(c => `
+      <div class="three-col-cell">
+        ${c.icon ? `<div class="cell-icon-wrap">${SVG_ICONS[c.icon]}</div>` : ""}
+        <h3 class="cell-heading">${c.heading}</h3>
+        <p class="cell-paragraph">${c.text}</p>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-three-column">
+        <div class="three-col-header">
+          <h2 class="three-col-main-title">${data.title}</h2>
+          ${data.subtitle ? `<p class="three-col-sub-title">${data.subtitle}</p>` : ""}
+        </div>
+        <div class="three-col-grid">
+          ${colsHtml}
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "roadmap-table") {
+    const rowsHtml = data.rows.map(r => `
+      <div class="table-row-item">
+        <div class="cell-bold">${r.scope}</div>
+        <div class="cell-regular">${r.phases}</div>
+        <div class="cell-regular">${r.focus}</div>
+        <div class="cell-bold">${r.timeline}</div>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-table">
+        <div class="table-header">
+          <h2 class="table-main-title">${data.title}</h2>
+          <p class="table-sub-title">${data.subtitle}</p>
+        </div>
+        <div class="table-body">
+          ${rowsHtml}
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "deliverables-table") {
+    const rowsHtml = data.rows.map(r => `
+      <div class="deliverable-row-item">
+        <div class="cell-deliverable-name">${r.deliverable}</div>
+        <div class="cell-regular">${r.description}</div>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-deliverables-table">
+        <div class="table-header">
+          <h2 class="table-main-title">${data.title}</h2>
+          ${data.subtitle ? `<p class="table-sub-title">${data.subtitle}</p>` : ""}
+        </div>
+        <div class="table-body">
+          ${rowsHtml}
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "mockup-slide") {
+    const c = data.phoneContent;
+    const bubblesHtml = c.items.map(item => `
+      <div class="notification-bubble">
+        <div class="bubble-title">${item.title}</div>
+        <div class="bubble-desc">${item.desc}</div>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-mockup-slide" style="background-image: linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.4) 100%), url('${data.bgImage}');">
+        <div class="mockup-left-panel">
+          <div class="qr-container-box">
+            <img src="${data.qrCode}" class="qr-code-img" alt="Prototype access QR Code">
+          </div>
+          <p class="mockup-desc-text">Scan QR to experience active failure and intelligent recovery prototypes on your mobile device.</p>
+        </div>
+        <div class="mockup-right-panel">
+          <div class="phone-glass-container">
+            <div class="phone-header-notch"></div>
+            <span class="phone-pill-heading">Already handled • ${c.handledCount} Items</span>
+            <div class="phone-notifications-list">
+              ${bubblesHtml}
+            </div>
+            <div class="phone-bottom-nudge">
+              ${c.nudge}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "synthetic-testing") {
+    contentHtml = `
+      <div class="slide-content-wrapper layout-synthetic-testing">
+        <div class="synthetic-left">
+          <h2 class="synthetic-heading">${data.title}</h2>
+          <p class="synthetic-sub">Designed to complement live research, not replace it.</p>
+          <p class="synthetic-desc">${data.text}</p>
+        </div>
+        <div class="synthetic-right">
+          <img src="${data.visualUrl}" class="synthetic-dashboard-img" alt="CoMedia GUXS Synthetic dashboard app mockup">
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "trusted-logos") {
+    const boxesHtml = data.logos.map(logo => `
+      <div class="logo-box-cell">
+        ${logo.file ? `<img src="${logo.file}" class="logo-vector-img" alt="${logo.name} brand logo">` : `<span class="logo-placeholder-text">${logo.name}</span>`}
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-trusted-logos">
+        <div class="logos-top">
+          <h2 class="logos-main-title">${data.title}</h2>
+          <p class="logos-sub-title">${data.subtitle}</p>
+        </div>
+        <div class="logos-cells-grid">
+          ${boxesHtml}
+        </div>
+      </div>
+    `;
+  } 
+  
+  else if (data.layout === "team-grid") {
+    const cellsHtml = data.team.map(m => `
+      <div class="team-member-cell">
+        <h3 class="member-cell-name">${m.name}</h3>
+        <span class="member-cell-role">${m.role}</span>
+        <p class="member-cell-bio">${m.bio}</p>
+      </div>
+    `).join("");
+
+    contentHtml = `
+      <div class="slide-content-wrapper layout-team-grid">
+        <div class="team-top">
+          <h2 class="team-main-title">${data.title}</h2>
+        </div>
+        <div class="team-cells-grid">
+          ${cellsHtml}
+        </div>
+      </div>
+    `;
   }
 
-  // Active link highlighters on scroll
-  let currentSec = 'work';
-  sections.forEach(section => {
-    const secTop = section.offsetTop - 150;
-    if (window.scrollY >= secTop) {
-      currentSec = section.getAttribute('id') || 'work';
+  canvas.innerHTML = contentHtml;
+
+  // Update Bottom Counters
+  const counter = document.getElementById("slide-counter");
+  if (counter) {
+    const displayNum = String(index + 1).padStart(2, '0');
+    const displayTotal = String(slides.length).padStart(2, '0');
+    counter.textContent = `${displayNum} / ${displayTotal}`;
+  }
+
+  // Update Header Tabs Highlight and indicator bar
+  updateNavigationTabs(data.category);
+}
+
+// Navigation Category Underline Mapper
+function updateNavigationTabs(activeCategory) {
+  const tabs = document.querySelectorAll(".nav-tab");
+  const bar = document.getElementById("indicator-bar");
+  if (!bar) return;
+
+  let activeTab = null;
+
+  tabs.forEach(tab => {
+    tab.classList.remove("active");
+    if (tab.getAttribute("data-category") === activeCategory) {
+      tab.classList.add("active");
+      activeTab = tab;
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    const href = link.getAttribute('href').substring(1);
-    if (href === currentSec) {
-      link.classList.add('active');
-    }
-  });
-}
-
-// 3. Scroll Reveal Animations (Intersection Observer)
-function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.scroll-reveal');
-  
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.05,
-    rootMargin: "0px 0px -40px 0px"
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-}
-
-// 4. Accessible Case Study Drawer System (HTML5 Dialog)
-function initModalSystem() {
-  const modal = document.getElementById('project-modal');
-  const closeBtn = document.getElementById('modal-close');
-  const cards = document.querySelectorAll('.case-study-card');
-  
-  if (!modal || !closeBtn) return;
-
-  // Open Modal logic
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const projectKey = card.getAttribute('data-project');
-      const data = caseStudiesData[projectKey];
-      
-      if (!data) return;
-
-      // Populate Modal Fields
-      document.getElementById('modal-tag').textContent = data.tag;
-      document.getElementById('modal-title').textContent = data.title;
-      document.getElementById('modal-subtitle').textContent = data.subtitle;
-      document.getElementById('modal-challenge-text').textContent = data.challenge;
-      document.getElementById('modal-approach-text').textContent = data.approach;
-      document.getElementById('modal-impact-text').textContent = data.impact;
-      document.getElementById('modal-client-value').textContent = data.client;
-      document.getElementById('modal-services-value').textContent = data.services;
-
-      // Populate Capabilities List
-      const listContainer = document.getElementById('modal-capabilities-list');
-      listContainer.innerHTML = '';
-      data.capabilities.forEach(cap => {
-        const li = document.createElement('li');
-        li.textContent = cap;
-        listContainer.appendChild(li);
-      });
-
-      // Populate Hero Visual (Image or Simulated layout)
-      const visualContainer = document.getElementById('modal-visual-container');
-      visualContainer.innerHTML = '';
-      
-      if (projectKey === 'future-cards') {
-        // Render stylized deck for future cards in modal
-        const div = document.createElement('div');
-        div.className = 'card-grid-visual-simulation';
-        div.style.height = '100%';
-        div.style.padding = '2rem';
-        div.innerHTML = `
-          <div class="visual-deck-card pink-deck-card">Brand Overview</div>
-          <div class="visual-deck-card orange-deck-card">Client Brief</div>
-          <div class="visual-deck-card purple-deck-card">Brand Storytelling</div>
-        `;
-        visualContainer.appendChild(div);
-      } else {
-        const img = document.createElement('img');
-        img.src = data.visualUrl;
-        img.className = 'modal-hero-img';
-        img.alt = `${data.title} illustrative background`;
-        
-        if (projectKey === 'google') {
-          img.style.filter = 'brightness(0.6) saturate(1.2)';
-        }
-        visualContainer.appendChild(img);
-      }
-
-      // Open utilizing standard HTML5 Dialog
-      modal.showModal();
-      document.body.style.overflow = 'hidden'; // Lock background scroll
-    });
-  });
-
-  // Close Modal logic
-  const closeModal = () => {
-    modal.close();
-    document.body.style.overflow = ''; // Unlock background scroll
-  };
-
-  closeBtn.addEventListener('click', closeModal);
-
-  // Close modal when clicking on the backdrop
-  modal.addEventListener('click', (e) => {
-    const rect = modal.getBoundingClientRect();
-    const isInDialog = (
-      e.clientX >= rect.left &&
-      e.clientX <= rect.right &&
-      e.clientY >= rect.top &&
-      e.clientY <= rect.bottom
-    );
-    if (!isInDialog) {
-      closeModal();
-    }
-  });
-
-  // Handle ESC key
-  modal.addEventListener('cancel', () => {
-    document.body.style.overflow = '';
-  });
-}
-
-// 5. Accessible Contact Drawer System
-function initContactSystem() {
-  const contactModal = document.getElementById('contact-modal');
-  const openBtns = document.querySelectorAll('.contact-btn, .section-blue-cta');
-  const closeBtn = document.getElementById('contact-close');
-  
-  if (!contactModal || !closeBtn) return;
-
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      contactModal.showModal();
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  const closeContact = () => {
-    contactModal.close();
-    document.body.style.overflow = '';
-  };
-
-  closeBtn.addEventListener('click', closeContact);
-
-  contactModal.addEventListener('click', (e) => {
-    const rect = contactModal.getBoundingClientRect();
-    const isInDialog = (
-      e.clientX >= rect.left &&
-      e.clientX <= rect.right &&
-      e.clientY >= rect.top &&
-      e.clientY <= rect.bottom
-    );
-    if (!isInDialog) {
-      closeContact();
-    }
-  });
-
-  contactModal.addEventListener('cancel', () => {
-    document.body.style.overflow = '';
-  });
-}
-
-// 6. Mobile Navigation Drawer Toggle
-function initMobileNav() {
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('nav-menu');
-  
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', !expanded);
+  // Calculate coordinates to move the bar smoothly
+  if (activeTab) {
+    const parentLeft = activeTab.offsetParent.getBoundingClientRect().left;
+    const tabRect = activeTab.getBoundingClientRect();
     
-    if (!expanded) {
-      menu.style.display = 'flex';
-      menu.style.flexDirection = 'column';
-      menu.style.position = 'absolute';
-      menu.style.top = '100%';
-      menu.style.left = '0';
-      menu.style.width = '100%';
-      menu.style.background = 'rgba(12, 12, 12, 0.98)';
-      menu.style.padding = '2.5rem 2rem';
-      menu.style.borderBottom = '1px solid rgba(255, 75, 141, 0.15)';
-      menu.style.gap = '1.5rem';
-    } else {
-      menu.style.display = '';
+    // Offset relative to navigation container
+    const relativeLeft = tabRect.left - parentLeft;
+    
+    bar.style.left = `${relativeLeft}px`;
+    bar.style.width = `${tabRect.width}px`;
+  }
+}
+
+// Presentation Navigation Handlers
+function navigatePrev() {
+  if (currentSlideIndex > 0) {
+    currentSlideIndex--;
+    renderSlide(currentSlideIndex);
+  }
+}
+
+function navigateNext() {
+  if (currentSlideIndex < slides.length - 1) {
+    currentSlideIndex++;
+    renderSlide(currentSlideIndex);
+  }
+}
+
+// Setup Presentation Event Listeners
+function initPresentation() {
+  // Arrow Button Clicks
+  const prevBtn = document.getElementById("arrow-prev");
+  const nextBtn = document.getElementById("arrow-next");
+
+  if (prevBtn) prevBtn.addEventListener("click", navigatePrev);
+  if (nextBtn) nextBtn.addEventListener("click", navigateNext);
+
+  // Keyboard controls
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "Space") {
+      e.preventDefault();
+      navigateNext();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      navigatePrev();
     }
+  });
+
+  // Navigation Tabs Clicks
+  const tabs = document.querySelectorAll(".nav-tab");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const targetSlide = parseInt(tab.getAttribute("data-target-slide")) - 1;
+      if (!isNaN(targetSlide) && targetSlide >= 0 && targetSlide < slides.length) {
+        currentSlideIndex = targetSlide;
+        renderSlide(currentSlideIndex);
+      }
+    });
+  });
+
+  // Accessible Modal handlers
+  const trigger = document.getElementById("contact-trigger");
+  const dialog = document.getElementById("contact-dialog");
+  const closeBtn = document.getElementById("modal-close");
+
+  if (trigger && dialog && closeBtn) {
+    trigger.addEventListener("click", () => dialog.showModal());
+    closeBtn.addEventListener("click", () => dialog.close());
+    
+    // Close on clicking backdrop
+    dialog.addEventListener("click", (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      );
+      if (!isInDialog) {
+        dialog.close();
+      }
+    });
+  }
+
+  // Initial render
+  renderSlide(currentSlideIndex);
+  
+  // Trigger layout sizing on window resize to ensure indicator bar matches
+  window.addEventListener("resize", () => {
+    const activeData = slides[currentSlideIndex];
+    if (activeData) updateNavigationTabs(activeData.category);
   });
 }
 
-// Global Initialization
-window.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('scroll', handleScroll);
-  initScrollReveal();
-  initModalSystem();
-  initContactSystem();
-  initMobileNav();
-  
-  handleScroll();
-});
+// DOM Initialization trigger
+window.addEventListener("DOMContentLoaded", initPresentation);
