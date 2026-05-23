@@ -3,6 +3,16 @@
    Design: Figma node 114:116
    ============================================================ */
 
+@font-face {
+  font-family: 'nudica';
+  src: url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff2') format('woff2'),
+       url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff') format('woff'),
+       url('font/Webfont/Webfont Kit/nudica-medium-webfont.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Tokens */
 :root {
   --dark: #1a1a1a;
@@ -14,7 +24,9 @@
   --purple: #6f65ff;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,26 +41,42 @@ html {
 body {
   background-color: var(--dark);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
-img { display: block; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}
 
 /* ============================================================
    Navigation
    ============================================================ */
 
 .site-nav {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
   width: 100%;
-  height: 80px;
+  min-height: clamp(60px, 8vh, 90px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 clamp(24px, 4.2vw, 60px);
   background-color: var(--dark);
+  transition: background-color 0.45s ease;
 }
 
 .nav-logo svg {
@@ -72,7 +100,7 @@ img { display: block; }
   align-items: center;
   height: 48px;
   padding: 0 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -82,21 +110,147 @@ img { display: block; }
   transition: opacity 0.2s ease;
 }
 
-.nav-link:hover { opacity: 0.75; }
+.nav-link:hover {
+  opacity: 0.75;
+}
 
 .nav-cta {
   height: 44px;
   padding: 0 20px;
   background-color: var(--pink);
   color: #212121;
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 600;
   font-size: 14px;
   border-radius: 100px;
   transition: opacity 0.2s ease;
 }
 
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover {
+  opacity: 0.85;
+}
+
+/* Case study hover: nav goes transparent with white links */
+body.cs-active .site-nav {
+  background-color: transparent;
+}
+
+body.cs-active .nav-link {
+  color: var(--white);
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Full-screen mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 clamp(24px, 6vw, 60px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: clamp(16px, 3vh, 28px);
+  right: clamp(24px, 4vw, 60px);
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.mobile-menu-close:hover {
+  opacity: 1;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.mobile-nav-link {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(40px, 8vw, 80px);
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity 0.2s;
+}
+
+.mobile-nav-link:hover {
+  opacity: 0.5;
+}
+
+.mobile-nav-cta {
+  margin-top: 5vh;
+  align-self: flex-start;
+  padding: 14px 32px;
+  background: var(--pink);
+  color: #212121;
+  font-family: 'nudica', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.mobile-nav-cta:hover {
+  opacity: 0.85;
+}
 
 /* ============================================================
    Hero Section
@@ -104,51 +258,202 @@ img { display: block; }
 
 .hero-section {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  padding-top: 0;
-  background-color: var(--dark);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background-color: var(--dark);
+}
+
+/* Background image layer — fades in on NEC hover */
+.hero-cs-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+body[data-cs='nec'] .hero-cs-bg-layer[data-client='nec'],
+body[data-cs='google'] .hero-cs-bg-layer[data-client='google'] {
+  opacity: 1;
+}
+
+.hero-cs-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-cs-bg-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Hero body — grows between nav and logos */
+.hero-body {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(24px, 4.2vw, 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title and subtitle drift up and fade on hover */
+body.cs-active .hero-title {
+  opacity: 0;
+  transform: translateY(-14px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.28s ease;
+}
+
+body.cs-active .hero-subtitle {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease 0.05s, transform 0.22s ease 0.05s;
+}
+
+/* Case study content layers — one per client, stacked */
+.hero-cs-content {
+  position: absolute;
+  inset: 0;
+  padding: 0 clamp(24px, 4.2vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 40px);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+body[data-cs='nec'] .hero-cs-content[data-client='nec'],
+body[data-cs='google'] .hero-cs-content[data-client='google'] {
+  opacity: 1;
+  pointer-events: all;
+  transition: none;
+}
+
+.hero-cs-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vh, 40px);
+}
+
+/* Keyframes for element entry animations */
+@keyframes cs-logo-in {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cs-text-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cs-media-up {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Default: elements hidden in their start positions */
+.hero-cs-logo {
+  height: clamp(18px, 2.2vh, 30px);
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.hero-cs-logo--large {
+  height: clamp(36px, 5vh, 72px);
+}
+
+.hero-cs-headline {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(20px, 2.5vw, 44px);
+  line-height: 1.15;
+  color: var(--white);
+  max-width: clamp(200px, 40vw, 560px);
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.hero-cs-video {
+  width: clamp(160px, 35vw, 580px);
+  border-radius: clamp(8px, 1vw, 20px);
+  flex-shrink: 0;
+  display: block;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Per-client activation — animations re-fire on each data-cs change */
+body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-logo,
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-logo {
+  animation: cs-logo-in 0.4s ease 0.3s both;
+}
+
+body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-headline,
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-headline {
+  animation: cs-text-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+
+body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-video,
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
+  animation: cs-media-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
 .hero-title {
   font-family: 'Anton', sans-serif;
-  font-size: 120px;
-  line-height: 114px;
-  letter-spacing: -2.4px;
+  font-size: clamp(52px, 8.5vw, 140px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--white);
-  padding: 20px 0 0 60px;
-  margin-top: 7px;
+  margin-top: 12vh;
+  transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
 }
 
 .hero-subtitle {
-  position: absolute;
-  top: 367px;
-  left: 60px;
-  width: 825px;
   font-family: 'Anton', sans-serif;
-  font-size: 48px;
-  line-height: 60px;
-  letter-spacing: -0.5px;
+  font-size: clamp(22px, 3.5vw, 52px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--white);
+  max-width: clamp(280px, 58vw, 860px);
+  margin-top: 5vh;
+  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
 }
 
 .hero-logos {
-  position: absolute;
-  bottom: 100px;
-  left: 60px;
-  right: 60px;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 32px);
+  margin-top: auto;
+  padding: clamp(32px, 4vh, 60px) clamp(24px, 4.2vw, 60px) clamp(40px, 5vh, 70px);
 }
 
 .client-logo {
   object-fit: contain;
   filter: brightness(0) invert(1);
-  max-height: 32px;
+  height: clamp(30px, 2.2vh, 32px);
+  width: auto;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -162,7 +467,7 @@ img { display: block; }
 
 .quote-text {
   max-width: 830px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 60px;
@@ -172,15 +477,31 @@ img { display: block; }
 }
 
 /* ============================================================
-   Problems Section
+   Scroll Stack
+   ============================================================ */
+
+.scroll-stack {
+  position: relative;
+}
+
+.stack-card {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* ============================================================
+   Problems Section (Card 01)
    ============================================================ */
 
 .problems-section {
-  position: relative;
   width: 100%;
-  min-height: 900px;
   background-color: var(--yellow);
   padding: 48px 60px 80px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-num {
@@ -211,7 +532,7 @@ img { display: block; }
 }
 
 .problem-item {
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
@@ -222,8 +543,69 @@ img { display: block; }
 .problem-divider {
   height: 1px;
   background-color: var(--dark-text);
-  width: 735px;
-  flex-shrink: 0;
+  width: min(735px, 100%);
+}
+
+/* ============================================================
+   Build Section (Card 02)
+   ============================================================ */
+
+.build-section {
+  background-color: #0b0e1a;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+
+.build-text-col {
+  flex: 0 0 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 60px 80px;
+  gap: 0;
+}
+
+.build-num {
+  color: var(--pink);
+  margin-bottom: 40px;
+}
+
+.build-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(32px, 4.5vw, 72px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: clamp(20px, 3vh, 48px);
+}
+
+.build-body {
+  font-family: 'nudica', sans-serif;
+  font-weight: 400;
+  font-size: clamp(15px, 1.2vw, 20px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.build-image-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 60px 48px 0;
+  overflow: hidden;
+}
+
+.build-vibe-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 /* ============================================================
@@ -281,7 +663,7 @@ img { display: block; }
 }
 
 .case-view-link {
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
@@ -290,7 +672,9 @@ img { display: block; }
   transition: opacity 0.2s ease;
 }
 
-.case-view-link:hover { opacity: 0.75; }
+.case-view-link:hover {
+  opacity: 0.75;
+}
 
 .case-title {
   font-family: 'Anton', sans-serif;
@@ -367,7 +751,7 @@ img { display: block; }
 
 .article-cta {
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
@@ -377,7 +761,9 @@ img { display: block; }
   transition: opacity 0.2s ease;
 }
 
-.article-cta:hover { opacity: 0.75; }
+.article-cta:hover {
+  opacity: 0.75;
+}
 
 /* ============================================================
    Footer
@@ -448,7 +834,7 @@ img { display: block; }
 }
 
 .footer-nav-link {
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 44px;
@@ -456,7 +842,9 @@ img { display: block; }
   transition: opacity 0.2s ease;
 }
 
-.footer-nav-link:hover { opacity: 0.75; }
+.footer-nav-link:hover {
+  opacity: 0.75;
+}
 
 .footer-wave-area {
   flex: 1;
@@ -478,7 +866,7 @@ img { display: block; }
 
 .footer-copyright,
 .footer-legal {
-  font-family: 'Inter', sans-serif;
+  font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -494,38 +882,65 @@ img { display: block; }
    Responsive adjustments
    ============================================================ */
 
-@media (max-width: 1100px) {
-  .hero-subtitle {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    font-size: 36px;
-    line-height: 52px;
-    font-family: 'Anton', sans-serif;
-    padding: 200px 60px 0;
+/* Hamburger breakpoint */
+@media (max-width: 1000px) {
+
+  .nav-links,
+  .nav-cta {
+    display: none;
   }
-  .hero-section { min-height: 700px; }
-  .footer-cta-text { font-size: 60px; line-height: 60px; }
-  .footer-cta-line { margin-top: 140px; }
-  .problem-divider { width: 100%; }
+
+  .nav-hamburger {
+    display: flex;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 72px; line-height: 72px; padding-left: 24px; }
-  .hero-subtitle { font-size: 28px; line-height: 40px; padding: 160px 24px 0; }
-  .hero-logos { left: 24px; right: 24px; flex-wrap: wrap; gap: 24px; bottom: 60px; }
-  .quote-section { padding: 80px 24px; }
-  .quote-text { font-size: 24px; line-height: 40px; }
-  .problems-section { padding: 40px 24px 60px; }
-  .problems-heading { font-size: 36px; }
-  .problem-item { font-size: 16px; }
-  .problem-divider { width: 100%; }
-  .case-study-section { height: auto; min-height: 500px; }
-  .case-video-placeholder { display: none; }
-  .site-nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .footer-cta-text { font-size: 40px; line-height: 44px; }
-  .footer-inner { padding: 0 24px; }
-  .footer-nav { flex-wrap: wrap; gap: 16px; }
+  .quote-section {
+    padding: 80px clamp(24px, 4vw, 60px);
+  }
+
+  .quote-text {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .problems-section {
+    padding: 40px clamp(24px, 4vw, 60px) 60px;
+  }
+
+  .problems-heading {
+    font-size: 36px;
+  }
+
+  .problem-item {
+    font-size: 16px;
+  }
+
+  .problem-divider {
+    width: 100%;
+  }
+
+  .case-study-section {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .case-video-placeholder {
+    display: none;
+  }
+
+  .footer-cta-text {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .footer-inner {
+    padding: 0 24px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 }

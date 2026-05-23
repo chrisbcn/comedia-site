@@ -6,43 +6,100 @@
   <title>CoMedia Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Major+Mono+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="site-nav">
-    <a href="#" class="nav-logo" aria-label="CoMedia Design">
-      <svg width="51" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M29.5063 31.0366C29.5558 31.1187 29.5842 31.2148 29.5842 31.3176C29.5842 31.5504 29.438 31.7494 29.2319 31.8284C26.1407 34.4329 22.1627 36 17.8222 36C7.97928 36 0 27.9411 0 18C0 8.05887 7.97928 0 17.8222 0C22.2463 0 26.2939 1.62808 29.4097 4.32338C29.4178 4.3304 29.4255 4.33862 29.4328 4.3479C29.5267 4.4485 29.5842 4.58382 29.5842 4.73264C29.5842 4.87531 29.5313 5.00558 29.4442 5.10475C29.4383 5.11299 29.4319 5.12044 29.4253 5.12699C27.5887 6.94015 26.1385 9.15097 25.2113 11.6216C25.2071 11.6328 25.2022 11.6437 25.1967 11.6544C25.1075 11.8459 24.9139 11.9786 24.6896 11.9786C24.5186 11.9786 24.3655 11.9015 24.2628 11.7801C22.6405 10.067 20.3547 9 17.8222 9C12.9008 9 8.91111 13.0294 8.91111 18C8.91111 22.9706 12.9008 27 17.8222 27C20.3513 27 22.6343 25.9359 24.2562 24.2269C24.3589 24.1008 24.5149 24.0203 24.6897 24.0203C24.9317 24.0203 25.1378 24.1746 25.2159 24.3906C26.1448 26.8603 27.5964 29.07 29.4342 30.8818C29.467 30.9141 29.491 30.9694 29.5063 31.0366Z" fill="white"/>
-        <path d="M42.3972 27.128C47.3844 27.128 51.4273 23.0795 51.4273 18.0854C51.4273 13.0913 47.3844 9.04272 42.3972 9.04272C37.4101 9.04272 33.3672 13.0913 33.3672 18.0854C33.3672 23.0795 37.4101 27.128 42.3972 27.128Z" fill="white"/>
-      </svg>
-    </a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="#" class="nav-link">About Us</a>
-        <a href="#" class="nav-link">Work</a>
-        <a href="#" class="nav-link">AI Thinking</a>
-        <a href="#" class="nav-link">Creative Capital</a>
-        <a href="#" class="nav-link">Insights</a>
-      </div>
-      <button class="nav-cta">Let's chat</button>
-    </div>
-  </nav>
+  <!-- Mobile menu (fixed overlay, kept outside hero) -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#" class="mobile-nav-link">About Us</a>
+      <a href="#" class="mobile-nav-link">Work</a>
+      <a href="#" class="mobile-nav-link">AI Thinking</a>
+      <a href="#" class="mobile-nav-link">Creative Capital</a>
+      <a href="#" class="mobile-nav-link">Insights</a>
+    </nav>
+    <button class="mobile-nav-cta">Let's chat</button>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <h1 class="hero-title">Comedia</h1>
-    <p class="hero-subtitle">We craft digital<br>solutions for companies<br>that need to move.</p>
-    <div class="hero-logos">
-      <img src="imgs/google.svg" alt="Google" class="client-logo" style="height:29px">
-      <img src="imgs/macys.svg" alt="Macy's" class="client-logo" style="height:29px">
-      <img src="imgs/Logo.svg.svg" alt="Vodafone" class="client-logo" style="height:31px">
-      <img src="imgs/nec_corporation_logo.svg.svg" alt="NEC" class="client-logo" style="height:25px">
-      <img src="imgs/atlassian_logo.svg.svg" alt="Atlassian" class="client-logo" style="height:31px">
-      <img src="imgs/ericsson_logo.svg.svg" alt="Ericsson" class="client-logo" style="height:31px">
+  <!-- Hero section contains the nav so the bg can extend full viewport -->
+  <section class="hero-section" id="hero">
+
+    <!-- Nav is first flex child -->
+    <nav class="site-nav">
+      <a href="#" class="nav-logo" aria-label="CoMedia Design">
+        <svg width="51" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M29.5063 31.0366C29.5558 31.1187 29.5842 31.2148 29.5842 31.3176C29.5842 31.5504 29.438 31.7494 29.2319 31.8284C26.1407 34.4329 22.1627 36 17.8222 36C7.97928 36 0 27.9411 0 18C0 8.05887 7.97928 0 17.8222 0C22.2463 0 26.2939 1.62808 29.4097 4.32338C29.4178 4.3304 29.4255 4.33862 29.4328 4.3479C29.5267 4.4485 29.5842 4.58382 29.5842 4.73264C29.5842 4.87531 29.5313 5.00558 29.4442 5.10475C29.4383 5.11299 29.4319 5.12044 29.4253 5.12699C27.5887 6.94015 26.1385 9.15097 25.2113 11.6216C25.2071 11.6328 25.2022 11.6437 25.1967 11.6544C25.1075 11.8459 24.9139 11.9786 24.6896 11.9786C24.5186 11.9786 24.3655 11.9015 24.2628 11.7801C22.6405 10.067 20.3547 9 17.8222 9C12.9008 9 8.91111 13.0294 8.91111 18C8.91111 22.9706 12.9008 27 17.8222 27C20.3513 27 22.6343 25.9359 24.2562 24.2269C24.3589 24.1008 24.5149 24.0203 24.6897 24.0203C24.9317 24.0203 25.1378 24.1746 25.2159 24.3906C26.1448 26.8603 27.5964 29.07 29.4342 30.8818C29.467 30.9141 29.491 30.9694 29.5063 31.0366Z" fill="white"/>
+          <path d="M42.3972 27.128C47.3844 27.128 51.4273 23.0795 51.4273 18.0854C51.4273 13.0913 47.3844 9.04272 42.3972 9.04272C37.4101 9.04272 33.3672 13.0913 33.3672 18.0854C33.3672 23.0795 37.4101 27.128 42.3972 27.128Z" fill="white"/>
+        </svg>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#" class="nav-link">About Us</a>
+          <a href="#" class="nav-link">Work</a>
+          <a href="#" class="nav-link">AI Thinking</a>
+          <a href="#" class="nav-link">Creative Capital</a>
+          <a href="#" class="nav-link">Insights</a>
+        </div>
+        <button class="nav-cta">Let's chat</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Case study background layers (one per client) -->
+    <div class="hero-cs-bg-layer" data-client="nec">
+      <img src="imgs/nec-bg-pool.png" alt="" class="hero-cs-bg-img">
+      <div class="hero-cs-bg-dim"></div>
     </div>
+    <div class="hero-cs-bg-layer" data-client="google">
+      <img src="imgs/ecomm-bg1.png" alt="" class="hero-cs-bg-img">
+      <div class="hero-cs-bg-dim"></div>
+    </div>
+
+    <!-- Hero body: grows between nav and logos -->
+    <div class="hero-body">
+      <h1 class="hero-title">Comedia</h1>
+      <p class="hero-subtitle">We craft digital solutions for companies that need to move.</p>
+
+      <!-- NEC case study content -->
+      <div class="hero-cs-content" data-client="nec">
+        <div class="hero-cs-left">
+          <img src="imgs/nec_corporation_logo.svg.svg" alt="NEC" class="hero-cs-logo">
+          <h2 class="hero-cs-headline">From post-it note to commercial smart home product</h2>
+        </div>
+        <video class="hero-cs-video" autoplay muted loop playsinline>
+          <source src="imgs/nec 1 2 video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Google case study content -->
+      <div class="hero-cs-content" data-client="google">
+        <div class="hero-cs-left">
+          <img src="imgs/google.svg" alt="Google" class="hero-cs-logo hero-cs-logo--large">
+          <h2 class="hero-cs-headline">Google's Gemini E-Commerce Showcase</h2>
+        </div>
+        <video class="hero-cs-video" autoplay muted loop playsinline>
+          <source src="imgs/ecommm-vid-1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Logos — always visible, always at bottom -->
+    <div class="hero-logos">
+      <img src="imgs/google.svg" alt="Google" class="client-logo" data-cs="google">
+      <img src="imgs/macys.svg" alt="Macy's" class="client-logo">
+      <img src="imgs/Logo.svg.svg" alt="Vodafone" class="client-logo">
+      <img src="imgs/nec_corporation_logo.svg.svg" alt="NEC" class="client-logo" data-cs="nec">
+      <img src="imgs/atlassian_logo.svg.svg" alt="Atlassian" class="client-logo">
+      <img src="imgs/ericsson_logo.svg.svg" alt="Ericsson" class="client-logo">
+    </div>
+
   </section>
 
   <!-- Quote Section -->
@@ -50,22 +107,39 @@
     <p class="quote-text">When everyone has the same tools, the only differentiator left is the quality of thinking going in. Standing apart from the crowd is getting harder and more vital.</p>
   </section>
 
-  <!-- Problems Section -->
-  <section class="problems-section">
-    <span class="section-num">01</span>
-    <h2 class="problems-heading">Which problems<br>keep you up at night?</h2>
-    <div class="problems-list">
-      <p class="problem-item">"We're fighting fires while the real product work sits idle."</p>
-      <div class="problem-divider"></div>
-      <p class="problem-item">"Our roadmap looks like our competitors' roadmap."</p>
-      <div class="problem-divider"></div>
-      <p class="problem-item">"We need senior expertise for this sprint, not a two-year hire."</p>
-      <div class="problem-divider"></div>
-      <p class="problem-item">"We have a demo that impressed the board. Now we need to ship the real thing."</p>
-      <div class="problem-divider"></div>
-      <p class="problem-item">"We're moving fast. I'm not sure we're moving in the right direction."</p>
-    </div>
-  </section>
+  <!-- Scroll-stack: 01 Problems → 02 Build → 03 Vibe -->
+  <div class="scroll-stack">
+
+    <!-- Card 01: Problems -->
+    <section class="problems-section stack-card">
+      <span class="section-num">01</span>
+      <h2 class="problems-heading">Which problems<br>keep you up at night?</h2>
+      <div class="problems-list">
+        <p class="problem-item">"We're fighting fires while the real product work sits idle."</p>
+        <div class="problem-divider"></div>
+        <p class="problem-item">"Our roadmap looks like our competitors' roadmap."</p>
+        <div class="problem-divider"></div>
+        <p class="problem-item">"We need senior expertise for this sprint, not a two-year hire."</p>
+        <div class="problem-divider"></div>
+        <p class="problem-item">"We have a demo that impressed the board. Now we need to ship the real thing."</p>
+        <div class="problem-divider"></div>
+        <p class="problem-item">"We're moving fast. I'm not sure we're moving in the right direction."</p>
+      </div>
+    </section>
+
+    <!-- Card 02: Build -->
+    <section class="build-section stack-card">
+      <div class="build-text-col">
+        <span class="section-num build-num">02</span>
+        <h2 class="build-heading">Anyone can build it.<br>Not everyone<br>can ship it.</h2>
+        <p class="build-body">The tools have been democratised. The gap isn't access — it's senior craft, clear thinking, and the ability to bring the right thing to life, fast.</p>
+      </div>
+      <div class="build-image-col">
+        <img src="imgs/vibe-code-exhaustion.png" alt="" class="build-vibe-img">
+      </div>
+    </section>
+
+  </div>
 
   <!-- Case Study Section -->
   <section class="case-study-section">
@@ -127,5 +201,54 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      var closeBtn = document.getElementById('mobile-menu-close');
+
+      function openMenu() {
+        menu.classList.add('is-open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function () {
+        menu.classList.contains('is-open') ? closeMenu() : openMenu();
+      });
+      closeBtn.addEventListener('click', closeMenu);
+      menu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function (el) {
+        el.addEventListener('click', closeMenu);
+      });
+    })();
+
+    // Client logo hover → case study preview
+    (function () {
+      var hero = document.getElementById('hero');
+      var clientLogos = hero.querySelectorAll('.client-logo[data-cs]');
+
+      clientLogos.forEach(function (logo) {
+        logo.addEventListener('mouseenter', function () {
+          document.body.classList.add('cs-active');
+          document.body.setAttribute('data-cs', logo.dataset.cs);
+        });
+      });
+
+      hero.addEventListener('mouseleave', function () {
+        document.body.classList.remove('cs-active');
+        document.body.removeAttribute('data-cs');
+      });
+    })();
+  </script>
 </body>
 </html>
