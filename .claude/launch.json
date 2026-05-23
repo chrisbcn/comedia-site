@@ -6,7 +6,8 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "."],
       "port": 3001,
-      "autoPort": true
+      "autoPort": true,
+      "path": "/home.html"
     }
   ]
 }
