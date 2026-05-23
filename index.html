@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoMedia Design | Bridging Digital & Physical Worlds</title>
+  <meta name="description" content="CoMedia Design is a premier digital product design and development agency. Explore our case studies for Macy's, Sharp/NEC, Atlassian, Ericsson, and Google.">
+  
+  <!-- Preload fonts and critical images -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Background Glows -->
+  <div class="glow-bg glow-pink"></div>
+  <div class="glow-bg glow-purple"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo-link" aria-label="CoMedia Design Home">
+        <img src="imgs/Logo.svg" alt="" class="nav-logo-icon">
+        <img src="imgs/Brand Name.svg" alt="comedia" class="nav-brand-text">
+      </a>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#work" class="nav-link active">Work</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link contact-btn">Let's Talk</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline scroll-reveal">Digital Product Design & Development</span>
+        <h1 class="hero-title scroll-reveal">
+          Bridging the <span class="highlight-pink">digital</span> & <span class="highlight-yellow">physical</span> worlds.
+        </h1>
+        <p class="hero-description scroll-reveal">
+          We are a hands-on digital agency solving complex challenges for global brands. We craft smart software, industrial ecosystems, and connected products that make the complex simple.
+        </p>
+        <div class="hero-actions scroll-reveal">
+          <a href="#work" class="btn btn-primary">Explore Our Work</a>
+          <a href="#about" class="btn btn-secondary">Learn Our Process</a>
+        </div>
+      </div>
+      <div class="hero-visual scroll-reveal">
+        <div class="visual-container">
+          <img src="imgs/Mask group.png" alt="Abstract colorful digital profile illustration representing digital human experience" class="hero-img">
+          <div class="visual-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Bar -->
+  <section class="clients-section" aria-label="Trusted by companies worldwide">
+    <div class="clients-container">
+      <p class="clients-title">Trusted by industry leaders worldwide</p>
+      <div class="clients-grid">
+        <div class="client-logo-wrapper scroll-reveal"><img src="imgs/google.svg" alt="Google logo"></div>
+        <div class="client-logo-wrapper scroll-reveal"><img src="imgs/macys.svg" alt="Macy's logo"></div>
+        <div class="client-logo-wrapper scroll-reveal"><img src="imgs/atlassian_logo.svg.svg" alt="Atlassian logo"></div>
+        <div class="client-logo-wrapper scroll-reveal"><img src="imgs/ericsson_logo.svg.svg" alt="Ericsson logo"></div>
+        <div class="client-logo-wrapper scroll-reveal"><img src="imgs/nec_corporation_logo.svg.svg" alt="NEC logo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section" id="work">
+    <div class="portfolio-container">
+      <header class="section-header">
+        <h2 class="section-title scroll-reveal">Selected Case Studies</h2>
+        <p class="section-subtitle scroll-reveal">Explore our deep dives into strategy, interface design, and systems development.</p>
+        
+        <!-- Filter Controls -->
+        <div class="filter-wrapper scroll-reveal">
+          <div class="filter-controls" role="tablist" aria-label="Filter case studies">
+            <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="case-studies-grid" data-filter="all">All Projects</button>
+            <button class="filter-btn" role="tab" aria-selected="false" aria-controls="case-studies-grid" data-filter="iot">IoT & Connected</button>
+            <button class="filter-btn" role="tab" aria-selected="false" aria-controls="case-studies-grid" data-filter="ai">AI & Personalization</button>
+            <button class="filter-btn" role="tab" aria-selected="false" aria-controls="case-studies-grid" data-filter="systems">Enterprise Systems</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Case Studies Grid -->
+      <div class="case-studies-grid" id="case-studies-grid" role="region" aria-live="polite">
+        
+        <!-- Case Study 1: Macy's -->
+        <article class="case-study-card scroll-reveal" data-categories="ai" id="card-macys">
+          <div class="card-visual">
+            <div class="card-visual-bg" style="background-image: url('imgs/Mask group.png'); filter: hue-rotate(180deg) brightness(0.6);"></div>
+            <div class="card-logo-container">
+              <img src="imgs/macys.svg" alt="Macy's logo" class="card-logo">
+            </div>
+            <div class="card-glow"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-tag">AI & Retail</span>
+              <span class="card-time">4 Min Read</span>
+            </div>
+            <h3 class="card-title">Macy's AI-Powered Style Platform</h3>
+            <p class="card-excerpt">
+              Personalizing the shopping journey across mobile and physical stores to engage Millennial and Gen Z audiences through intelligence-driven styling.
+            </p>
+            <button class="btn-text open-modal-btn" data-project="macys">
+              View Case Study
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Case Study 2: Sharp / NEC -->
+        <article class="case-study-card scroll-reveal" data-categories="iot" id="card-nec">
+          <div class="card-visual video-card">
+            <!-- Video preloads and is controlled by JS -->
+            <video class="card-video-bg" loop muted playsinline preload="metadata">
+              <source src="imgs/nec 1 2 video.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay-gradient"></div>
+            <div class="card-logo-container">
+              <img src="imgs/nec_corporation_logo.svg.svg" alt="Sharp NEC logo" class="card-logo nec-logo">
+            </div>
+            <div class="card-glow"></div>
+            <span class="hover-video-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Hover to Play Video
+            </span>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-tag">IoT & Hardware</span>
+              <span class="card-time">5 Min Read</span>
+            </div>
+            <h3 class="card-title">Sharp/NEC Connected Rentals</h3>
+            <p class="card-excerpt">
+              Reimagining short-term rentals by designing cohesive smart hardware and software IoT tools for modern property managers.
+            </p>
+            <button class="btn-text open-modal-btn" data-project="nec">
+              View Case Study
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Case Study 3: Atlassian -->
+        <article class="case-study-card scroll-reveal" data-categories="systems" id="card-atlassian">
+          <div class="card-visual">
+            <div class="card-visual-bg" style="background-image: url('imgs/Mask group.png'); filter: hue-rotate(240deg) saturate(1.5) brightness(0.5);"></div>
+            <div class="card-logo-container">
+              <img src="imgs/atlassian_logo.svg.svg" alt="Atlassian logo" class="card-logo">
+            </div>
+            <div class="card-glow"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-tag">Enterprise Systems</span>
+              <span class="card-time">3 Min Read</span>
+            </div>
+            <h3 class="card-title">Atlassian Progress Alignment</h3>
+            <p class="card-excerpt">
+              Designing an intuitive progress tracking architecture to help globally distributed product teams stay synchronized, aligned, and informed.
+            </p>
+            <button class="btn-text open-modal-btn" data-project="atlassian">
+              View Case Study
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Case Study 4: Ericsson -->
+        <article class="case-study-card scroll-reveal" data-categories="iot systems" id="card-ericsson">
+          <div class="card-visual">
+            <div class="card-visual-bg" style="background-image: url('imgs/Mask group.png'); filter: hue-rotate(90deg) contrast(1.1) brightness(0.55);"></div>
+            <div class="card-logo-container">
+              <img src="imgs/ericsson_logo.svg.svg" alt="Ericsson logo" class="card-logo">
+            </div>
+            <div class="card-glow"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-tag">5G & Factory 4.0</span>
+              <span class="card-time">6 Min Read</span>
+            </div>
+            <h3 class="card-title">Ericsson Industrial IoT Ecosystem</h3>
+            <p class="card-excerpt">
+              Developing scalable interface strategies for 5G, IoT, and IIoT ecosystems to solve Factory 4.0 automation and asset tracking challenges.
+            </p>
+            <button class="btn-text open-modal-btn" data-project="ericsson">
+              View Case Study
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Case Study 5: Google -->
+        <article class="case-study-card scroll-reveal" data-categories="systems ai" id="card-google">
+          <div class="card-visual">
+            <div class="card-visual-bg" style="background-image: url('imgs/Mask group.png'); filter: saturate(0.8) brightness(0.5);"></div>
+            <div class="card-logo-container">
+              <img src="imgs/google.svg" alt="Google logo" class="card-logo">
+            </div>
+            <div class="card-glow"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-tag">Product Design</span>
+              <span class="card-time">4 Min Read</span>
+            </div>
+            <h3 class="card-title">Google Product Simplification</h3>
+            <p class="card-excerpt">
+              Designing user-friendly flows for core search and productivity initiatives, translating massive datasets into accessible consumer value.
+            </p>
+            <button class="btn-text open-modal-btn" data-project="google">
+              View Case Study
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Methodology Section -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-grid">
+        <div class="about-content scroll-reveal">
+          <span class="about-tag">Our Approach</span>
+          <h2 class="about-title">Making the complex simple.</h2>
+          <p class="about-desc">
+            We operate at the intersection of business strategy, physical hardware, and smart software. We don't just hand off templates; we assemble cross-functional teams that co-create, build, and ship products from start to finish.
+          </p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Years of Innovation</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50M+</span>
+              <span class="stat-label">End Users Engaged</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Global Hubs</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-features">
+          <div class="feature-card scroll-reveal">
+            <div class="feature-icon pink-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">End-to-End Product Strategy</h3>
+            <p class="feature-desc">Fusing product management, research, and technical roadmapping into a highly actionable, user-centric vision.</p>
+          </div>
+          <div class="feature-card scroll-reveal">
+            <div class="feature-icon yellow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Interaction & IoT Prototyping</h3>
+            <p class="feature-desc">Building functional, hardware-connected systems that let you touch and feel interactions before full-scale manufacturing.</p>
+          </div>
+          <div class="feature-card scroll-reveal">
+            <div class="feature-icon purple-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 9.4 7.55 4.24a1 1 0 0 0-1.5.87v13.78a1 1 0 0 0 1.5.87l8.95-5.16a1 1 0 0 0 0-1.74Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Next-Gen Development</h3>
+            <p class="feature-desc">Engineering robust, responsive clientside and serverside software solutions optimized for speed and reliability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container scroll-reveal">
+      <div class="contact-card">
+        <div class="contact-glow"></div>
+        <div class="contact-card-content">
+          <h2 class="contact-title">Let's bridge your digital and physical challenge.</h2>
+          <p class="contact-desc">
+            We partner with ambitious leaders to bring bold projects to life. Reach out today to schedule an initial discovery workshop with our design partners.
+          </p>
+          <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you shortly.'); this.reset();">
+            <div class="form-row">
+              <input type="text" placeholder="Name" required aria-label="Your Name">
+              <input type="email" placeholder="Email" required aria-label="Your Email Address">
+            </div>
+            <div class="form-row">
+              <textarea placeholder="Tell us about your project..." rows="3" required aria-label="Project details"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="imgs/Logo.svg" alt="" class="footer-logo-icon">
+            <img src="imgs/Brand Name.svg" alt="comedia" class="footer-brand-text">
+          </div>
+          <p class="footer-tagline">Bridging Digital & Physical Worlds.</p>
+        </div>
+        <div class="footer-locations">
+          <div class="location-item">
+            <span class="location-dot pink-dot"></span>
+            <div>
+              <p class="location-city">San Francisco</p>
+              <p class="location-sub">HQ & Innovation Lab</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-dot yellow-dot"></span>
+            <div>
+              <p class="location-city">Vancouver</p>
+              <p class="location-sub">Engineering Hub</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-dot purple-dot"></span>
+            <div>
+              <p class="location-city">Salamanca</p>
+              <p class="location-sub">European Design Hub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 CoMedia Design. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Case Study Dialog (HTML5 Dialog Element) -->
+  <dialog class="modal" id="project-modal" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-wrapper">
+      <button class="modal-close-btn" aria-label="Close modal" id="modal-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="modal-scroll-container">
+        
+        <!-- Header -->
+        <header class="modal-header">
+          <span class="modal-tag" id="modal-tag">Tag</span>
+          <h2 class="modal-title" id="modal-title">Project Title</h2>
+          <p class="modal-subtitle" id="modal-subtitle">Project Subtitle</p>
+        </header>
+
+        <!-- Visual Hero (Dynamic image or video loaded by JS) -->
+        <div class="modal-hero-visual" id="modal-visual-container">
+          <!-- Dynamically filled -->
+        </div>
+
+        <!-- Details Grid -->
+        <div class="modal-details-grid">
+          <div class="modal-main-content">
+            <section class="modal-section">
+              <h3 class="modal-section-title">The Challenge</h3>
+              <p id="modal-challenge-text">Challenge description goes here.</p>
+            </section>
+            <section class="modal-section">
+              <h3 class="modal-section-title">Our Approach</h3>
+              <p id="modal-approach-text">Approach description goes here.</p>
+            </section>
+            <section class="modal-section">
+              <h3 class="modal-section-title">The Impact & Results</h3>
+              <p id="modal-impact-text">Impact description goes here.</p>
+            </section>
+          </div>
+          
+          <aside class="modal-sidebar">
+            <div class="sidebar-block">
+              <h4 class="sidebar-label">Client</h4>
+              <p class="sidebar-value" id="modal-client-value">Client Name</p>
+            </div>
+            <div class="sidebar-block">
+              <h4 class="sidebar-label">Core Capabilities</h4>
+              <ul class="sidebar-list" id="modal-capabilities-list">
+                <!-- Dynamically filled -->
+              </ul>
+            </div>
+            <div class="sidebar-block">
+              <h4 class="sidebar-label">Services Provided</h4>
+              <p class="sidebar-value" id="modal-services-value">Design, Prototyping, Strategy</p>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </dialog>
+
+  <script src="index.js"></script>
+</body>
+</html>
