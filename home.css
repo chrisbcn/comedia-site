@@ -6,8 +6,8 @@
 @font-face {
   font-family: 'nudica';
   src: url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff2') format('woff2'),
-       url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff') format('woff'),
-       url('font/Webfont/Webfont Kit/nudica-medium-webfont.ttf') format('truetype');
+    url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff') format('woff'),
+    url('font/Webfont/Webfont Kit/nudica-medium-webfont.ttf') format('truetype');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -276,7 +276,8 @@ body.cs-active .nav-link {
 }
 
 body[data-cs='nec'] .hero-cs-bg-layer[data-client='nec'],
-body[data-cs='google'] .hero-cs-bg-layer[data-client='google'] {
+body[data-cs='google'] .hero-cs-bg-layer[data-client='google'],
+body[data-cs='macys'] .hero-cs-bg-layer[data-client='macys'] {
   opacity: 1;
 }
 
@@ -336,7 +337,8 @@ body.cs-active .hero-subtitle {
 }
 
 body[data-cs='nec'] .hero-cs-content[data-client='nec'],
-body[data-cs='google'] .hero-cs-content[data-client='google'] {
+body[data-cs='google'] .hero-cs-content[data-client='google'],
+body[data-cs='macys'] .hero-cs-content[data-client='macys'] {
   opacity: 1;
   pointer-events: all;
   transition: none;
@@ -350,18 +352,39 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] {
 
 /* Keyframes for element entry animations */
 @keyframes cs-logo-in {
-  from { opacity: 0; transform: translateX(-30px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes cs-text-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes cs-media-up {
-  from { opacity: 0; transform: translateY(60px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Default: elements hidden in their start positions */
@@ -399,17 +422,26 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] {
 
 /* Per-client activation — animations re-fire on each data-cs change */
 body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-logo,
-body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-logo {
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-logo,
+body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-logo {
   animation: cs-logo-in 0.4s ease 0.3s both;
 }
 
 body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-headline,
-body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-headline {
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-headline,
+body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-headline {
   animation: cs-text-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
 }
 
 body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-video,
-body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video,
+body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
+  animation: cs-text-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+
+body[data-cs='nec'] .hero-cs-content[data-client='nec'] .hero-cs-video,
+body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video,
+body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   animation: cs-media-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
@@ -686,16 +718,57 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
   margin-bottom: 40px;
 }
 
-.case-video-placeholder {
+.case-study-video {
   flex: 1;
   max-height: 450px;
   width: 805px;
   align-self: flex-end;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: block;
+  object-fit: cover;
   margin-left: auto;
   margin-right: 206px;
+}
+
+/* Fade transition when switching case studies */
+.case-study-section .case-study-bg,
+.case-study-section .case-study-content {
+  transition: opacity 0.3s ease;
+}
+
+.case-study-section.cs-transitioning .case-study-bg,
+.case-study-section.cs-transitioning .case-study-content {
+  opacity: 0;
+}
+
+/* Navigation dots */
+.case-study-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 60px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.case-study-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.case-study-dots button.is-active {
+  background: var(--white);
+  transform: scale(1.25);
+}
+
+.case-study-dots button:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* ============================================================
@@ -708,6 +781,7 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
   min-height: 700px;
   background-color: var(--dark);
   overflow: hidden;
+  border-radius: 0 0 20px 20px;
 }
 
 .article-image-wrap {
@@ -766,11 +840,22 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
 }
 
 /* ============================================================
-   Footer
+   Content main wrapper — sits above the sticky footer
+   ============================================================ */
+
+.content-main {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   Footer — sticky at bottom, revealed as content scrolls away
    ============================================================ */
 
 .site-footer {
-  position: relative;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
   width: 100%;
   background-color: var(--purple);
   overflow: hidden;
@@ -778,12 +863,7 @@ body[data-cs='google'] .hero-cs-content[data-client='google'] .hero-cs-video {
 
 /* Dark rounded cap sits at the very top of the footer's visible area */
 .footer-dark-cap {
-  width: 100%;
-  height: 15px;
-  background-color: var(--dark);
-  border-radius: 0 0 20px 20px;
-  margin-bottom: 0;
-  flex-shrink: 0;
+  display: none;
 }
 
 .footer-inner {
