@@ -131,7 +131,7 @@
 
     <!-- Quote Section -->
     <section class="quote-section">
-      <p class="quote-text">When everyone has the same tools, the only differentiator left is the quality of thinking
+      <p class="quote-text" data-reveal>When everyone has the same tools, the only differentiator left is the quality of thinking
         going in. Standing apart from the crowd is getting harder and more vital.</p>
     </section>
 
@@ -140,9 +140,9 @@
 
       <!-- Card 01: Problems -->
       <section class="problems-section stack-card">
-        <span class="section-num">01</span>
-        <h2 class="problems-heading">Which problems<br>keep you up at night?</h2>
-        <div class="problems-list">
+        <span class="section-num" data-reveal>01</span>
+        <h2 class="problems-heading" data-reveal data-delay="1">Which problems<br>keep you up at night?</h2>
+        <div class="problems-list" data-reveal data-delay="2">
           <p class="problem-item">"We're fighting fires while the real product work sits idle."</p>
           <div class="problem-divider"></div>
           <p class="problem-item">"Our roadmap looks like our competitors' roadmap."</p>
@@ -157,13 +157,15 @@
 
       <!-- Card 02: Build -->
       <section class="build-section stack-card">
-        <div class="build-text-col">
-          <span class="section-num build-num">02</span>
-          <h2 class="build-heading">Anyone can build it.<br>Not everyone<br>can ship it.</h2>
-          <p class="build-body">The tools have been democratised. The gap isn't access — it's senior craft, clear
-            thinking, and the ability to bring the right thing to life, fast.</p>
+        <div class="build-text">
+          <p class="build-label" data-reveal>02/Build</p>
+          <h2 class="build-heading" data-reveal data-delay="1">Anyone can build it. Not everyone can ship it.</h2>
+          <p class="build-body" data-reveal data-delay="2">The demo that impresses in week two fails at week six. Data goes live. Edge cases
+            multiply. Shortcuts compound.</p>
+          <p class="build-body" data-reveal data-delay="3">We build things the next team can inherit. Real codebases. Real architecture decisions.
+            Real documentation. Not a handoff deck — a foundation.</p>
         </div>
-        <div class="build-image-col">
+        <div class="build-image" data-reveal data-delay="4">
           <img src="imgs/vibe-code-exhaustion.png" alt="" class="build-vibe-img">
         </div>
       </section>
@@ -190,15 +192,12 @@
 
     <!-- Article Section -->
     <section class="article-section">
-      <div class="article-image-wrap">
-        <img src="http://localhost:3845/assets/80504ebd99a14f0baa64ba816b1c517a8581c967.png"
-          onerror="this.style.display='none'" alt="" class="article-image">
+      <span class="article-tag" data-reveal>Article</span>
+      <div class="article-image-wrap" data-reveal data-delay="1">
+        <img src="imgs/trough-mediocrity.webp" onerror="this.style.display='none'" alt="" class="article-image">
       </div>
-      <div class="article-content">
-        <span class="article-tag">Article</span>
-        <h3 class="article-title">From Brecht to Design: Narrating Your Way Through the Creative Process</h3>
-        <a href="#" class="article-cta">Keep reading</a>
-      </div>
+      <h3 class="article-title" data-reveal data-delay="2">Breaking through the &ldquo;Trough of Mediocrity&rdquo;</h3>
+      <a href="#" class="article-cta" data-reveal data-delay="3">Keep reading &rarr;</a>
     </section>
 
   </div><!-- /content-main -->
@@ -242,6 +241,7 @@
   <script src="js/nav.js" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/case-study.js" defer></script>
+  <script src="js/reveal.js" defer></script>
 </body>
 
 </html>

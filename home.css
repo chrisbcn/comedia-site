@@ -585,60 +585,60 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
    ============================================================ */
 
 .build-section {
-  background-color: #0b0e1a;
+  background-color: #091027;
   z-index: 20;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 0;
+  flex-direction: column;
+  padding: clamp(32px, 5vh, 60px) clamp(24px, 4.2vw, 60px) 0;
 }
 
-.build-text-col {
-  flex: 0 0 42%;
+.build-text {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 48px 60px 80px;
-  gap: 0;
+  gap: clamp(12px, 1.8vh, 24px);
 }
 
-.build-num {
-  color: var(--pink);
-  margin-bottom: 40px;
+.build-label {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 48px;
+  line-height: 1;
+  color: #d4aa3a;
+  letter-spacing: 0.04em;
 }
 
 .build-heading {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(32px, 4.5vw, 72px);
-  line-height: 1.0;
-  letter-spacing: -0.02em;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: clamp(20px, 3vh, 48px);
+  color: #d4aa3a;
 }
 
 .build-body {
   font-family: 'nudica', sans-serif;
-  font-weight: 400;
-  font-size: clamp(15px, 1.2vw, 20px);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: -0.6px;
+  color: #d4aa3a;
+  max-width: 680px;
 }
 
-.build-image-col {
+.build-image {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 60px 48px 0;
+  align-items: flex-end;
   overflow: hidden;
+  min-height: 0;
 }
 
 .build-vibe-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
+  object-position: bottom center;
   display: block;
 }
 
@@ -772,62 +772,55 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
    ============================================================ */
 
 .article-section {
-  position: relative;
-  width: 100%;
-  min-height: 700px;
   background-color: var(--dark);
-  overflow: hidden;
+  padding: 48px 60px 80px;
+  display: flex;
+  flex-direction: column;
   border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.article-tag {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--white);
+  display: block;
+  margin-bottom: 24px;
 }
 
 .article-image-wrap {
-  position: absolute;
-  inset: 0;
+  width: 100%;
+  margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .article-image {
   width: 100%;
-  height: 100%;
+  height: 420px;
   object-fit: cover;
-  opacity: 0.7;
-}
-
-.article-content {
-  position: relative;
-  z-index: 1;
-  padding: 60px 60px 80px;
-  display: flex;
-  flex-direction: column;
-  min-height: 700px;
-}
-
-.article-tag {
-  font-family: 'Anton', sans-serif;
-  font-size: 20px;
-  line-height: 1.181;
-  color: var(--white);
   display: block;
-  flex-shrink: 0;
 }
 
 .article-title {
   font-family: 'Anton', sans-serif;
-  font-size: 40px;
-  line-height: 1.181;
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   color: var(--white);
-  max-width: 744px;
-  margin-top: auto;
+  max-width: 680px;
+  margin-bottom: 24px;
 }
 
 .article-cta {
-  display: block;
+  display: inline-flex;
+  align-items: center;
   font-family: 'nudica', sans-serif;
   font-weight: 500;
   font-size: 20px;
-  line-height: 40px;
-  letter-spacing: -0.6px;
-  color: var(--white);
-  margin-top: 16px;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  color: var(--yellow);
   transition: opacity 0.2s ease;
 }
 
@@ -953,6 +946,36 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   display: flex;
   align-items: center;
 }
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Preserve intentional dim opacity on the quote */
+.quote-text[data-reveal].is-visible {
+  opacity: 0.6;
+}
+
+[data-reveal][data-delay='1'] { transition-delay: 0.1s; }
+[data-reveal][data-delay='2'] { transition-delay: 0.2s; }
+[data-reveal][data-delay='3'] { transition-delay: 0.3s; }
+[data-reveal][data-delay='4'] { transition-delay: 0.4s; }
+[data-reveal][data-delay='5'] { transition-delay: 0.5s; }
+[data-reveal][data-delay='6'] { transition-delay: 0.6s; }
+[data-reveal][data-delay='7'] { transition-delay: 0.7s; }
+[data-reveal][data-delay='8'] { transition-delay: 0.8s; }
 
 /* ============================================================
    Responsive adjustments
