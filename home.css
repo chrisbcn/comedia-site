@@ -530,7 +530,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 .problems-section {
   width: 100%;
   background-color: var(--yellow);
-  padding: 48px 60px 80px;
+  padding: 48px 60px 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -559,8 +559,10 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 .problems-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 12px;
   max-width: 929px;
+  margin-top: auto;
+  padding-bottom: 60px;
 }
 
 .problem-item {
@@ -665,12 +667,6 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   display: block;
 }
 
-.case-study-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-}
 
 .case-study-content {
   position: relative;
