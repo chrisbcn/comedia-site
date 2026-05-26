@@ -493,7 +493,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
    ============================================================ */
 
 .quote-section {
-  background-color: var(--dark);
+  background-color: #212121;
   padding: 120px 60px 140px;
 }
 
@@ -514,12 +514,21 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .scroll-stack {
   position: relative;
+  height: 200svh; /* fallback; scrolljack.js sets this dynamically */
 }
 
-.stack-card {
+.scroll-stack-pin {
   position: sticky;
   top: 0;
   height: 100svh;
+  overflow: clip;
+}
+
+.stack-card {
+  position: absolute;
+  inset: 0;
+  height: 100svh;
+  will-change: transform;
   overflow: hidden;
 }
 
@@ -531,7 +540,6 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   width: 100%;
   background-color: var(--yellow);
   padding: 48px 60px 0;
-  z-index: 10;
   display: flex;
   flex-direction: column;
 }
@@ -586,7 +594,6 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .build-section {
   background-color: #091027;
-  z-index: 20;
   display: flex;
   flex-direction: column;
   padding: clamp(32px, 5vh, 60px) clamp(24px, 4.2vw, 60px) 0;
@@ -977,14 +984,37 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   transform: none;
 }
 
-[data-reveal][data-delay='1'] { transition-delay: 0.1s; }
-[data-reveal][data-delay='2'] { transition-delay: 0.2s; }
-[data-reveal][data-delay='3'] { transition-delay: 0.3s; }
-[data-reveal][data-delay='4'] { transition-delay: 0.4s; }
-[data-reveal][data-delay='5'] { transition-delay: 0.5s; }
-[data-reveal][data-delay='6'] { transition-delay: 0.6s; }
-[data-reveal][data-delay='7'] { transition-delay: 0.7s; }
-[data-reveal][data-delay='8'] { transition-delay: 0.8s; }
+[data-reveal][data-delay='1'] {
+  transition-delay: 0.1s;
+}
+
+[data-reveal][data-delay='2'] {
+  transition-delay: 0.2s;
+}
+
+[data-reveal][data-delay='3'] {
+  transition-delay: 0.3s;
+}
+
+[data-reveal][data-delay='4'] {
+  transition-delay: 0.4s;
+}
+
+[data-reveal][data-delay='5'] {
+  transition-delay: 0.5s;
+}
+
+[data-reveal][data-delay='6'] {
+  transition-delay: 0.6s;
+}
+
+[data-reveal][data-delay='7'] {
+  transition-delay: 0.7s;
+}
+
+[data-reveal][data-delay='8'] {
+  transition-delay: 0.8s;
+}
 
 /* ============================================================
    Responsive adjustments
