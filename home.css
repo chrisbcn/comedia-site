@@ -265,6 +265,39 @@ body.cs-active .nav-link {
   background-color: var(--dark);
 }
 
+/* Hover zone videos */
+.hero-zone-video {
+  position: absolute;
+  bottom: 80px; /* sit above the logo bar */
+  height: 58%;
+  max-height: 480px;
+  width: auto;
+  max-width: 34%;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  /* Push studio backdrop toward black so screen blend dissolves it into the hero */
+  filter: brightness(0.55) contrast(1.6);
+  mix-blend-mode: screen;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-zone-video[data-zone="left"] {
+  left: 60px;
+  transform-origin: bottom left;
+}
+
+.hero-zone-video[data-zone="right"] {
+  right: 60px;
+  transform-origin: bottom right;
+}
+
+.hero-zone-video.is-visible {
+  opacity: 1;
+}
+
 /* Hover grid overlay */
 .hero-grid {
   position: absolute;
