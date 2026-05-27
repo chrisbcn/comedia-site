@@ -265,6 +265,22 @@ body.cs-active .nav-link {
   background-color: var(--dark);
 }
 
+/* Hover grid overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 80px 80px;
+  -webkit-mask-image: radial-gradient(250px at -999px -999px, white 0%, transparent 100%);
+  mask-image: radial-gradient(250px at -999px -999px, white 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 /* Background image layer — fades in on NEC hover */
 .hero-cs-bg-layer {
   position: absolute;
