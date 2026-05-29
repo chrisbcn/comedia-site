@@ -6,7 +6,7 @@
    ============================================================ */
 
 (function () {
-  var words = ['experiences', 'products', 'designs', 'innovations', 'breakthroughs'];
+  var words = ['experiences,', 'products,', 'designs,', 'innovations,', 'breakthroughs,'];
   var el      = document.querySelector('.hero-cycle-inner');
   var wrapper = document.querySelector('.hero-word-cycle');
   if (!el || !wrapper) return;
