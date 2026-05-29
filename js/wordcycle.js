@@ -1,56 +1,72 @@
 /* ============================================================
-   wordcycle.js — Rolls through words in .hero-cycle-inner
-   Current word exits upward; next word enters from below.
-   The wrapper is locked to the width of the longest word so
-   line 1 never shifts, and the <br> keeps line 2 stable.
+   wordcycle.js — Rolls through words then transitions to the
+   first case study after one full rotation.
    ============================================================ */
 
 (function () {
-  var words = ['experiences,', 'products,', 'designs,', 'innovations,', 'breakthroughs,'];
+  var words   = ['experiences,', 'products,', 'designs,', 'innovations,', 'breakthroughs,'];
   var el      = document.querySelector('.hero-cycle-inner');
   var wrapper = document.querySelector('.hero-word-cycle');
   if (!el || !wrapper) return;
 
   var current = 0;
   var running = false;
+  var timer;
 
-  /* ── Lock wrapper width to longest word ─────────────────── */
-  function lockWidth() {
-    var original = el.textContent;
+  /* ── Lock wrapper to width of longest word ───────────────── */
+  (function lockWidth() {
+    var saved = el.textContent;
     var max = 0;
-    words.forEach(function (word) {
-      el.textContent = word;
-      max = Math.max(max, el.offsetWidth);
-    });
-    el.textContent = original;
+    words.forEach(function (w) { el.textContent = w; max = Math.max(max, el.offsetWidth); });
+    el.textContent = saved;
     wrapper.style.minWidth = max + 'px';
-  }
-  lockWidth();
+  })();
 
-  /* ── Cycle animation ────────────────────────────────────── */
-  function next() {
+  /* ── Activate first case study ───────────────────────────── */
+  function activateCaseStudy() {
+    document.body.classList.add('cs-active');
+    document.body.setAttribute('data-cs', 'nec');
+    setActiveIndicator('nec');
+  }
+
+  /* ── Active logo indicator ───────────────────────────────── */
+  function setActiveIndicator(csKey) {
+    document.querySelectorAll('.client-logo').forEach(function (logo) {
+      logo.classList.toggle('is-active', logo.dataset.cs === csKey);
+    });
+  }
+
+  /* ── Cycle one word ──────────────────────────────────────── */
+  function cycleWord() {
     if (running) return;
     running = true;
 
-    // 1. Exit: slide current word up
+    var nextIndex = (current + 1) % words.length;
+
+    // Exit current word upward
     el.classList.add('is-exit');
 
     setTimeout(function () {
-      // 2. Snap below without transition, update text
       el.classList.remove('is-exit');
       el.classList.add('is-enter');
-      current = (current + 1) % words.length;
+      current = nextIndex;
       el.textContent = words[current];
-
-      // 3. Force reflow so browser registers the new position
       void el.offsetWidth;
-
-      // 4. Remove is-enter — triggers the slide-in transition
       el.classList.remove('is-enter');
 
-      setTimeout(function () { running = false; }, 600);
+      setTimeout(function () {
+        running = false;
+
+        if (current === words.length - 1) {
+          // Last word shown — wait, then fade to case study
+          timer = setTimeout(activateCaseStudy, 2800);
+        } else {
+          timer = setTimeout(cycleWord, 2800);
+        }
+      }, 600);
     }, 450);
   }
 
-  setInterval(next, 2800);
+  // Kick off after the first word has been read
+  timer = setTimeout(cycleWord, 2800);
 })();

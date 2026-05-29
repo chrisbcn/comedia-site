@@ -530,12 +530,38 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   padding: clamp(32px, 4vh, 60px) clamp(24px, 4.2vw, 60px) clamp(40px, 5vh, 70px);
 }
 
+.hero-logos-label {
+  width: 100%;
+  font-family: 'nudica', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
 .client-logo {
   object-fit: contain;
   filter: brightness(0) invert(1);
   height: clamp(30px, 2.2vh, 32px);
   width: auto;
   flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.client-logo:hover,
+.client-logo.is-active {
+  opacity: 1;
+}
+
+/* Active indicator pill */
+.client-logo.is-active {
+  position: relative;
+  outline: 1.5px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 8px;
+  border-radius: 2px;
 }
 
 /* ============================================================
