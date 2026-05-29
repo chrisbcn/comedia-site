@@ -484,6 +484,34 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
 }
 
+/* Word cycle — rotating highlight word in hero subtitle */
+.hero-word-cycle {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.15;
+  /* Height matches one line of the subtitle so the clip is tight */
+}
+
+.hero-cycle-inner {
+  display: inline-block;
+  color: var(--pink);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s ease;
+  will-change: transform;
+}
+
+.hero-cycle-inner.is-exit {
+  transform: translateY(-110%);
+  opacity: 0;
+}
+
+.hero-cycle-inner.is-enter {
+  transform: translateY(110%);
+  opacity: 0;
+  transition: none; /* instant reposition before animating in */
+}
+
 .hero-logos {
   position: relative;
   z-index: 3;
