@@ -485,6 +485,10 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 /* Word cycle — rotating highlight word in hero subtitle */
+.hero-sub-end {
+  white-space: nowrap; /* keeps "digital [word]," always on the same line */
+}
+
 .hero-word-cycle {
   display: inline-block;
   overflow: hidden;
