@@ -479,14 +479,15 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--white);
-  max-width: clamp(280px, 58vw, 860px);
+  max-width: none;
   margin-top: 5vh;
   transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
 }
 
 /* Word cycle — rotating highlight word in hero subtitle */
-.hero-sub-end {
-  white-space: nowrap; /* keeps "digital [word]," always on the same line */
+.hero-sub-l1 {
+  white-space: nowrap; /* entire line 1 stays unbroken */
+  display: inline;
 }
 
 .hero-word-cycle {
