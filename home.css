@@ -3,15 +3,6 @@
    Design: Figma node 114:116
    ============================================================ */
 
-@font-face {
-  font-family: 'nudica';
-  src: url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff2') format('woff2'),
-    url('font/Webfont/Webfont Kit/nudica-medium-webfont.woff') format('woff'),
-    url('font/Webfont/Webfont Kit/nudica-medium-webfont.ttf') format('truetype');
-  font-weight: 300 900;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Tokens */
 :root {
@@ -41,7 +32,7 @@ html {
 body {
   background-color: var(--dark);
   color: var(--white);
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   overflow-x: hidden;
 }
 
@@ -100,7 +91,7 @@ img {
   align-items: center;
   height: 48px;
   padding: 0 20px;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -119,7 +110,7 @@ img {
   padding: 0 20px;
   background-color: var(--pink);
   color: #212121;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 600;
   font-size: 14px;
   border-radius: 100px;
@@ -222,7 +213,7 @@ body.cs-active .nav-link {
 }
 
 .mobile-nav-link {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: clamp(40px, 8vw, 80px);
   text-transform: uppercase;
   color: var(--white);
@@ -239,7 +230,7 @@ body.cs-active .nav-link {
   padding: 14px 32px;
   background: var(--pink);
   color: #212121;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 600;
   font-size: 16px;
   border-radius: 100px;
@@ -419,7 +410,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] {
 }
 
 .hero-cs-headline {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: clamp(20px, 2.5vw, 44px);
   line-height: 1.15;
   color: var(--white);
@@ -463,7 +454,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .hero-title {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: clamp(52px, 8.5vw, 140px);
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -474,7 +465,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .hero-subtitle {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: clamp(22px, 3.5vw, 52px);
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -532,7 +523,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .hero-logos-label {
   width: 100%;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -575,7 +566,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .quote-text {
   max-width: 830px;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 60px;
@@ -622,7 +613,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .section-num {
   display: block;
-  font-family: 'Major Mono Display', monospace;
+  font-family: "maple-web", sans-serif;
   font-size: 48px;
   line-height: 1;
   color: var(--dark-text);
@@ -630,7 +621,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .problems-heading {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: 0;
@@ -650,7 +641,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .problem-item {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
@@ -683,7 +674,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .build-label {
-  font-family: 'Major Mono Display', monospace;
+  font-family: "maple-web", sans-serif;
   font-size: 48px;
   line-height: 1;
   color: #d4aa3a;
@@ -691,7 +682,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .build-heading {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: 0;
@@ -700,7 +691,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .build-body {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
@@ -749,7 +740,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .humans-heading {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: clamp(34px, 3.5vw, 48px);
   line-height: 1.15;
@@ -759,7 +750,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .humans-body {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 400;
   font-size: clamp(14px, 1.1vw, 20px);
   line-height: 1.5;
@@ -901,7 +892,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 /* Figma: Outfit Light 16px white */
 .humans-badge-name {
-  font-family: 'Outfit', 'nudica', sans-serif;
+  font-family: 'Outfit', "neue-haas-unica", sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.2;
@@ -936,7 +927,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 /* Figma: Outfit Light 14/20 #0c0c0c */
 .humans-card-desc {
-  font-family: 'Outfit', 'nudica', sans-serif;
+  font-family: 'Outfit', "neue-haas-unica", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -988,7 +979,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 /* Figma: Outfit Regular 12/16 #eceee7 */
 .humans-match-sub {
-  font-family: 'Outfit', 'nudica', sans-serif;
+  font-family: 'Outfit', "neue-haas-unica", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -1062,7 +1053,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .case-view-link {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 40px;
@@ -1076,7 +1067,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .case-title {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 32px;
   line-height: 40px;
   letter-spacing: -0.3px;
@@ -1152,7 +1143,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .article-tag {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: var(--white);
@@ -1174,7 +1165,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .article-title {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 48px;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -1186,7 +1177,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 .article-cta {
   display: inline-flex;
   align-items: center;
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
@@ -1235,7 +1226,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .footer-brand {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 53px;
   font-weight: 700;
   letter-spacing: -0.53px;
@@ -1252,7 +1243,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .footer-cta-text {
-  font-family: 'Anton', sans-serif;
+  font-family: "maple-web", sans-serif;
   font-size: 96px;
   line-height: 80px;
   letter-spacing: -1.92px;
@@ -1274,7 +1265,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 .footer-nav-link {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 44px;
@@ -1306,7 +1297,7 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 
 .footer-copyright,
 .footer-legal {
-  font-family: 'nudica', sans-serif;
+  font-family: "neue-haas-unica", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
