@@ -726,6 +726,173 @@ body[data-cs='macys'] .hero-cs-content[data-client='macys'] .hero-cs-video {
 }
 
 /* ============================================================
+   Humans Not Hype Section
+   ============================================================ */
+
+.humans-section {
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 6vw, 100px);
+  padding: clamp(60px, 8vh, 100px) clamp(40px, 4.2vw, 80px);
+  background: linear-gradient(183deg,
+    #ecf1f2 44.9%,
+    #eaf0f0 59%,
+    #e2e9ea 79.8%,
+    #e5eaeb 94.6%);
+  overflow: hidden;
+}
+
+.humans-text {
+  flex: 0 0 clamp(260px, 34%, 420px);
+}
+
+.humans-heading {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+  margin-bottom: clamp(16px, 2vh, 28px);
+}
+
+.humans-body {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: #555;
+  max-width: 360px;
+}
+
+/* Product showcase */
+.humans-product {
+  position: relative;
+  flex: 1;
+  height: clamp(360px, 44vw, 480px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.humans-product-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Prada badge */
+.humans-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 6px 14px 6px 8px;
+  z-index: 2;
+}
+
+.humans-badge-logo {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+.humans-badge-name {
+  font-family: 'nudica', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+}
+
+/* Product info card */
+.humans-card {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 20px 22px 16px;
+  z-index: 2;
+}
+
+.humans-card-title {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.humans-card-desc {
+  font-family: 'nudica', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Best match bar */
+.humans-match {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  z-index: 3;
+}
+
+.humans-match-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.humans-match-label {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.humans-match-sub {
+  font-family: 'nudica', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.humans-match-score {
+  font-family: 'nudica', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.humans-match-score sup {
+  font-size: 14px;
+  vertical-align: super;
+}
+
+/* ============================================================
    Case Study Section
    ============================================================ */
 
