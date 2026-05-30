@@ -7,7 +7,7 @@
   <title>CoMedia Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Major+Mono+Display&family=Outfit:wght@300;400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
 </head>
 
@@ -182,32 +182,60 @@
     </div>
 
     <!-- Humans Not Hype Section -->
-    <section class="humans-section">
-      <div class="humans-text" data-reveal>
+    <section class="humans-section" id="humans">
+
+      <!-- Left: copy -->
+      <div class="humans-text">
         <h2 class="humans-heading">Humans, not hype</h2>
         <p class="humans-body">Where humans and agents meet. Creating experiences that extend human condition, using the latest frontier technologies</p>
       </div>
-      <div class="humans-product" data-reveal data-delay="2">
-        <img src="imgs/pexels-jose-martin-segura-benites-1422456152-26850888 1.png" alt="Sling back heel" class="humans-product-img">
-        <!-- Prada brand badge -->
-        <div class="humans-badge">
-          <img src="imgs/prada.png" alt="Prada" class="humans-badge-logo">
-          <span class="humans-badge-name">Prada</span>
-        </div>
-        <!-- Product info card -->
-        <div class="humans-card">
-          <h3 class="humans-card-title">Sling back heel</h3>
-          <p class="humans-card-desc">Sling back heel with square toe shape made with calf-skin leather.</p>
-        </div>
-        <!-- Best match bar -->
-        <div class="humans-match">
-          <div class="humans-match-left">
-            <span class="humans-match-label">Best Match</span>
-            <span class="humans-match-sub">This item is an excellent match.</span>
+
+      <!-- Right: video + scanning UI overlay -->
+      <div class="humans-visual">
+
+        <!-- Background video -->
+        <video class="humans-video" autoplay muted loop playsinline>
+          <source src="imgs/Legs_kick_up.mp4" type="video/mp4">
+        </video>
+
+        <!-- Dark overlay -->
+        <div class="humans-overlay"></div>
+
+        <!-- Centred panel (scan box + match box) -->
+        <div class="humans-panel">
+
+          <!-- Scanning box -->
+          <div class="humans-scan-box">
+            <!-- Animated scan line -->
+            <div class="humans-scanline"></div>
+
+            <!-- Prada badge — fades in during sequence -->
+            <div class="humans-badge">
+              <div class="humans-badge-circle">
+                <img src="imgs/prada.png" alt="Prada" class="humans-badge-logo">
+              </div>
+              <span class="humans-badge-name">Prada</span>
+            </div>
+
+            <!-- Product text — typewritten in during sequence -->
+            <div class="humans-card-info">
+              <h3 class="humans-card-title"></h3>
+              <p class="humans-card-desc"></p>
+            </div>
           </div>
-          <div class="humans-match-score">94<sup>%</sup></div>
-        </div>
-      </div>
+
+          <!-- Best Match box — fades in + count-up -->
+          <div class="humans-match">
+            <div class="humans-match-left">
+              <span class="humans-match-label">Best Match</span>
+              <span class="humans-match-sub">This item is an excellent match.</span>
+            </div>
+            <p class="humans-match-score"><span class="humans-match-num">0</span><sup>%</sup></p>
+          </div>
+
+        </div><!-- /humans-panel -->
+      </div><!-- /humans-visual -->
+
     </section>
 
     <!-- Case Study Section -->
@@ -284,6 +312,7 @@
   <script src="js/scrolljack.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/quote.js" defer></script>
+  <script src="js/humans.js" defer></script>
 </body>
 
 </html>
