@@ -6,7 +6,6 @@
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="Comedia for Gen Digital">
 <meta property="og:description" content="Selected website work: Gen Digital, Qorvo, Binarly and World Bank Climate Warehouse.">
-<link rel="icon" href="../../imgs/Logo.svg">
 <title>Comedia for Gen Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
@@ -63,10 +62,38 @@ a{color:inherit}
 .frame.tall{width:min(100%,920px)}
 .tile .plain{width:100%}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media (max-width:640px){.pair{grid-template-columns:1fr}}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.case .vlegend{display:none}}
 .tile .cap{position:absolute;left:18px;bottom:14px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 .tile.light .cap{color:rgba(20,20,20,.6)}
 .zoom{cursor:zoom-in}
+/* gen viewers */
+.proto{display:inline-flex;gap:8px;align-items:center;margin-top:28px;font-size:14px;font-weight:700;letter-spacing:.02em;text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:3px}
+.proto:hover{color:var(--accent);border-color:var(--accent)}
+.viewer{display:flex;flex-direction:column;gap:18px}
+.vhead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.seg,.swatches{display:flex;flex-wrap:wrap;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:4px}
+.seg button,.swatches button{font:600 13px/1 var(--body);color:rgba(255,255,255,.72);background:transparent;border:0;border-radius:999px;padding:9px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.seg button:hover,.swatches button:hover{color:#fff}
+.seg button[aria-selected=true],.swatches button[aria-selected=true]{background:#fff;color:#111}
+.seg button:focus-visible,.swatches button:focus-visible,.wipe input:focus-visible+.x{outline:2px solid var(--mint);outline-offset:2px}
+.swatches i{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.35)}
+.case .vlegend{display:flex;gap:18px;margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.vlegend span:first-child::before{content:"← "}
+.vlegend span:last-child::after{content:" →"}
+.case .vcap{margin:0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.66);max-width:none}
+.wipe{position:relative;aspect-ratio:1440/900;max-width:100%;border-radius:10px;overflow:hidden;border:6px solid #1a1a1a;box-shadow:0 30px 60px rgba(0,0,0,.4);background:#000;user-select:none;touch-action:pan-y}
+.wipe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .25s}
+.wipe .wr{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.wipe .handle{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.wipe .handle span{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.wipe .handle span::before,.wipe .handle span::after{content:"";position:absolute;top:50%;width:0;height:0;border:6px solid transparent;margin-top:-6px}
+.wipe .handle span::before{left:8px;border-right-color:#111}
+.wipe .handle span::after{right:8px;border-left-color:#111}
+.wipe input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.palframe{border-radius:10px;overflow:hidden;border:6px solid #1a1a1a;box-shadow:0 30px 60px rgba(0,0,0,.4);aspect-ratio:1440/900;max-width:100%}
+.palframe img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.loading{opacity:.35}
+@media (prefers-reduced-motion:reduce){.wipe img,.palframe img{transition:none}}
 /* backgrounds per client */
 .t-gen{background:radial-gradient(120% 90% at 80% 10%,#3b1f6b 0%,#0d0d12 55%)}
 .t-gen2{background:radial-gradient(120% 90% at 20% 90%,#2a3a8a 0%,#0d0d12 55%)}
@@ -124,27 +151,54 @@ footer{padding:24px var(--gutter);font-size:12px;color:var(--ink-3);border-top:1
     <h1>Selected website work.</h1>
     <p class="meta">Comedia · Prepared for Gen Digital · October 2026</p>
   </div>
-  <p>Brand, structure, flows and design for companies with a lot of products and a lot of pages. Four sites, each shown at the size it was designed at. Click any screen to see the whole page.</p>
+  <p>Brand, structure, flows and design for companies with a lot of products and a lot of pages. Four sites, each shown at the size it was designed at. Click a screen to see the whole page.</p>
 </section>
 
 <!-- GEN -->
 <section class="case" id="gen">
   <div class="case-text">
     <p class="kicker">Gen Digital · in progress</p>
-    <h2>The blog is already built as a system</h2>
-    <h3>One post type, three categories, seven page types from three templates and one component library.</h3>
-    <p>We set it up that way on purpose. The card, the listing row and the article template already carry what the rest of gendigital.com needs. Threat research leads the structure, and the family of brands appears once, in the brand strip, rather than as separate sections.</p>
-    <p>Structure is locked and with Ben's team for the build. The visual direction shown here was well received and is still moving: the same components were tried in four palettes before anyone chose one.</p>
-    <ul class="services"><li>Information architecture</li><li>Templates and component library</li><li>Visual design</li></ul>
+    <h2>The blog is being built as a system</h2>
+    <h3>Structure first, in the browser, on real pages with real content. The look goes on top.</h3>
+    <p>Every page type works in a plain structural layer before any visual design is applied: home, research, threat reports, stories, company, topics, archive, authors, search and the article itself. The visual pass is a skin over the same markup.</p>
+    <p>That lets us try palettes, light and dark, and treatments on live pages instead of static mockups, and nothing about the structure moves when the look does. Threat research leads, and the family of brands appears once, in the brand strip.</p>
+    <p>Structure is settled. The visual direction is still moving.</p>
+    <ul class="services"><li>Information architecture</li><li>Templates and components</li><li>Visual design</li></ul>
+    <a class="proto" href="https://gen-threat-labs-blog.vercel.app/" target="_blank" rel="noopener">Open the working prototype <span aria-hidden="true">↗</span></a>
   </div>
   <div class="tiles">
-    <div class="tile pad t-gen"><div class="frame crop zoom" data-full="img/gen-home-dark.jpg"><img src="img/gen-home-dark.jpg" alt="Gen Threat Labs blog homepage, dark direction"></div><span class="cap">Home · Threat Labs direction</span></div>
-    <div class="pair">
-      <div class="tile pad t-gen2"><div class="frame crop zoom" data-full="img/gen-article.jpg"><img src="img/gen-article.jpg" alt="Gen blog article template with key takeaways and page outline"></div><span class="cap">Article</span></div>
-      <div class="tile pad t-gen"><div class="frame crop zoom" data-full="img/gen-home-pastel.jpg"><img src="img/gen-home-pastel.jpg" alt="Gen blog homepage, pastel direction"></div><span class="cap">Home · Gen Blog direction</span></div>
+    <div class="tile t-gen pad viewer" id="wipe">
+      <div class="vhead">
+        <div class="seg" role="tablist" aria-label="Page">
+          <button type="button" role="tab" aria-selected="true" data-page="home">Home</button>
+          <button type="button" role="tab" aria-selected="false" data-page="home2">Home, lower</button>
+          <button type="button" role="tab" aria-selected="false" data-page="research">Research</button>
+          <button type="button" role="tab" aria-selected="false" data-page="article">Article</button>
+        </div>
+        <p class="vlegend"><span>Structure</span><span>Visual</span></p>
+      </div>
+      <div class="wipe" style="--x:50%">
+        <img class="wl" src="img/gen-v-home.jpg" alt="Visual layer of the Gen blog page">
+        <img class="wr" src="img/gen-w-home.jpg" alt="Structural layer of the same Gen blog page">
+        <div class="handle" aria-hidden="true"><span></span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the structural layer and the visual layer" id="wipe-range">
+      </div>
+      <p class="vcap">Drag across. Left is the structural layer, right is the visual pass. Same page, same markup.</p>
     </div>
-    <div class="tile"><img class="plain zoom" src="img/gen-exploration.jpg" data-full="img/gen-exploration.jpg" alt="Visual exploration board: the same homepage in four palettes"><span class="cap">Same components, four palettes</span></div>
-    <div class="tile"><img class="plain zoom" src="img/gen-components.jpg" data-full="img/gen-components.jpg" alt="Gen blog component sheet: header, hero, cards, listing rows, report band, filters"><span class="cap">The parts every page is built from</span></div>
+    <div class="tile t-gen2 pad viewer" id="pal">
+      <div class="vhead">
+        <div class="swatches" role="tablist" aria-label="Palette">
+          <button type="button" role="tab" aria-selected="false" data-pal="gen"><i style="background:#171717;box-shadow:inset 0 0 0 2px #1a1aff"></i>Gen blue</button>
+          <button type="button" role="tab" aria-selected="false" data-pal="mp110"><i style="background:#a3c0bd"></i>Sage</button>
+          <button type="button" role="tab" aria-selected="false" data-pal="mp088"><i style="background:#1e3442"></i>Navy</button>
+          <button type="button" role="tab" aria-selected="false" data-pal="mp100"><i style="background:#00aac1"></i>Teal</button>
+          <button type="button" role="tab" aria-selected="true" data-pal="pastel"><i style="background:#ffcb00"></i>Pastel</button>
+          <button type="button" role="tab" aria-selected="false" data-pal="light"><i style="background:#ece6da;box-shadow:inset 0 0 0 2px #ffcb00"></i>Light</button>
+        </div>
+      </div>
+      <div class="frame palframe"><img id="pal-img" src="img/gen-band-pastel.jpg" alt="Company section of the Gen blog in the pastel palette"></div>
+      <p class="vcap">The palette and the theme are one setting each. Same page, same content.</p>
+    </div>
   </div>
 </section>
 
@@ -255,6 +309,35 @@ footer{padding:24px var(--gutter);font-size:12px;color:var(--ink-3);border-top:1
   lb.addEventListener('click',close);
   document.getElementById('lbx').addEventListener('click',function(e){e.stopPropagation();close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
+
+  // preload
+  ['home','home2','research','article'].forEach(function(s){['w','v'].forEach(function(l){var i=new Image();i.src='img/gen-'+l+'-'+s+'.jpg'})});
+  ['gen','mp110','mp088','mp100','pastel','light'].forEach(function(p){var i=new Image();i.src='img/gen-band-'+p+'.jpg'});
+
+  // structure / visual wipe
+  var wipe=document.querySelector('#wipe .wipe'),range=document.getElementById('wipe-range');
+  var wl=wipe.querySelector('.wl'),wr=wipe.querySelector('.wr');
+  function setX(v){wipe.style.setProperty('--x',v+'%')}
+  range.addEventListener('input',function(){setX(range.value)});
+  document.querySelectorAll('#wipe .seg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#wipe .seg button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      var s=b.getAttribute('data-page');
+      wl.src='img/gen-v-'+s+'.jpg'; wr.src='img/gen-w-'+s+'.jpg';
+    });
+  });
+
+  // palette
+  var palImg=document.getElementById('pal-img');
+  var names={gen:'Gen blue',mp110:'sage',mp088:'navy',mp100:'teal',pastel:'pastel',light:'light'};
+  document.querySelectorAll('#pal .swatches button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#pal .swatches button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      var p=b.getAttribute('data-pal');
+      palImg.src='img/gen-band-'+p+'.jpg';
+      palImg.alt='Company section of the Gen blog in the '+names[p]+(p==='light'?' theme':' palette');
+    });
+  });
 })();
 </script>
 
