@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Comedia for Gen Digital">
+<meta property="og:description" content="Selected website work: Gen Digital, Qorvo, Binarly and World Bank Climate Warehouse.">
+<link rel="icon" href="../../imgs/Logo.svg">
+<title>Comedia for Gen Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: the PTIB case study page. Sticky text column left, a stack of rounded image tiles right. One light look, by choice. */
+:root{
+  --paper:#ECECE6; --ink:#141414; --ink-2:#3d3d3a; --ink-3:#6b6b66; --rule:#c9c9c2;
+  --tile:#111114; --tile-gen:#0d0d12; --tile-qorvo:#0b5fb3; --tile-qorvo-2:#dbe9f6; --tile-cw:#2f6fd6; --tile-cw-2:#eef2f6;
+  --accent:#E6007E; --mint:#1cc99a;
+  --display:'Anton','Oswald','Arial Narrow',Impact,sans-serif; --body:'Inter',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --gutter:clamp(16px,4vw,60px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{padding-inline:var(--gutter);padding-block:0}
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(236,236,230,.92);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gutter);border-bottom:1px solid var(--rule)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+.logo svg{width:34px;height:24px}
+.navlinks{display:flex;gap:22px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.navlinks a{text-decoration:none;color:var(--ink-2)}
+.navlinks a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.chat{background:var(--ink);color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:4px;white-space:nowrap}
+@media (max-width:860px){.navlinks{display:none}}
+/* hero */
+.hero{padding-block:clamp(56px,9vw,120px) clamp(40px,6vw,72px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:end;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,132px);line-height:.92;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.hero p{font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--ink-2);max-width:34ch;margin:0}
+.hero .meta{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:28px;font-weight:600}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+/* case layout */
+.case{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:clamp(28px,4vw,60px);padding-block:clamp(48px,6vw,88px);border-bottom:1px solid var(--rule)}
+.case-text{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);align-self:start}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.case h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,5.4vw,76px);line-height:.95;letter-spacing:-.005em;margin:0 0 18px;text-wrap:balance}
+.case h3{font-size:clamp(20px,1.7vw,24px);font-weight:700;line-height:1.25;margin:0 0 18px;color:var(--ink-2)}
+.case p{font-size:15.5px;line-height:1.6;color:var(--ink-2);margin:0 0 14px;max-width:52ch}
+.services{list-style:none;margin:36px 0 0;padding:0;max-width:420px}
+.services li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px;font-weight:500}
+.services li:first-child{border-top:1px solid var(--rule)}
+.note{margin-top:22px;font-size:13px;color:var(--ink-3)}
+/* tiles */
+.tiles{display:flex;flex-direction:column;gap:24px;min-width:0}
+.tile{border-radius:20px;overflow:hidden;background:var(--tile);position:relative}
+.tile.pad{padding:clamp(18px,3.2vw,48px)}
+.tile.pad .frame{border-radius:12px;overflow:hidden;background:#000;border:6px solid #1a1a1a;box-shadow:0 30px 60px rgba(0,0,0,.35);margin:0 auto}
+.tile.pad.light .frame{border-color:#ffffff;box-shadow:0 24px 50px rgba(20,40,80,.25)}
+.frame img{width:100%;height:auto}
+.frame.crop{max-height:min(680px,60vw)}
+.frame.crop img{object-fit:cover;object-position:top;height:min(680px,60vw)}
+.frame.tall{width:min(100%,920px)}
+.tile .plain{width:100%}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:640px){.pair{grid-template-columns:1fr}}
+.tile .cap{position:absolute;left:18px;bottom:14px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.tile.light .cap{color:rgba(20,20,20,.6)}
+.zoom{cursor:zoom-in}
+/* backgrounds per client */
+.t-gen{background:radial-gradient(120% 90% at 80% 10%,#3b1f6b 0%,#0d0d12 55%)}
+.t-gen2{background:radial-gradient(120% 90% at 20% 90%,#2a3a8a 0%,#0d0d12 55%)}
+.t-qorvo{background:linear-gradient(135deg,#0b5fb3 0%,#1d8fe0 100%)}
+.t-qorvo-light{background:#dbe9f6}
+.t-qorvo-grey{background:#e4e6e9}
+.t-cw{background:linear-gradient(135deg,#2f6fd6 0%,#5aa2ec 100%)}
+.t-cw-light{background:#eef2f6}
+.t-cw-green{background:linear-gradient(135deg,#1e6b4e 0%,#3fa36f 100%)}
+/* also + pov */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{border-top:2px solid var(--ink);padding-top:16px}
+.card h4{margin:0 0 8px;font-size:22px;font-weight:700}
+.card p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.55}
+.pov{padding-block:clamp(48px,6vw,88px);border-bottom:1px solid var(--rule)}
+.pov h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;margin:0 0 36px;max-width:16ch;text-wrap:balance}
+.pov ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media (max-width:860px){.pov ol{grid-template-columns:1fr}}
+.pov li{border-top:1px solid var(--ink);padding-top:16px}
+.pov li b{display:block;font-size:20px;margin-bottom:8px}
+.pov li span{color:var(--ink-2);font-size:15.5px;line-height:1.55}
+.close{padding-block:clamp(56px,9vw,120px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.close h2{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,132px);line-height:.92;margin:0}
+.close h2 em{font-style:normal;color:var(--accent)}
+.contact{font-size:15px;line-height:1.7;color:var(--ink-2)}
+.contact b{color:var(--ink)}
+@media (max-width:860px){.close{grid-template-columns:1fr}}
+footer{padding:24px var(--gutter);font-size:12px;color:var(--ink-3);border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,10,10,.96);z-index:50;overflow:auto;padding:40px var(--gutter);cursor:zoom-out}
+.lb img{margin:0 auto;width:min(100%,1440px);height:auto;border-radius:8px}
+.lb .x{position:fixed;top:calc(env(safe-area-inset-top,0px) + 16px);right:20px;background:#fff;color:#111;border:0;border-radius:999px;width:40px;height:40px;font-size:20px;cursor:pointer}
+@media (max-width:1000px){.case{grid-template-columns:1fr}.case-text{position:static}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="#top" aria-label="Comedia">
+    <svg viewBox="0 0 52 36" aria-hidden="true"><path d="M29.5 31c.3.4 0 .9-.3.9C26.1 34.4 22.2 36 17.8 36 8 36 0 27.9 0 18S8 0 17.8 0c4.4 0 8.5 1.6 11.6 4.3.2.3.1.7-.1.8-1.9 1.8-3.3 4-4.2 6.5-.1.3-.5.4-.8.2-1.6-1.7-3.9-2.8-6.4-2.8-4.9 0-8.9 4-8.9 9s4 9 8.9 9c2.5 0 4.8-1.1 6.4-2.8.3-.2.7-.1.8.2.9 2.5 2.4 4.7 4.2 6.5z" fill="#141414"/><circle cx="42.4" cy="18.1" r="9" fill="#141414"/></svg>
+    Comedia
+  </a>
+  <div class="navlinks">
+    <a href="#gen">Gen Digital</a><a href="#qorvo">Qorvo</a><a href="#binarly">Binarly</a><a href="#climate">Climate Warehouse</a><a href="#also">Also</a><a href="#next">The whole site</a>
+  </div>
+  <a class="chat" href="#next">Let's chat</a>
+</nav>
+
+<main class="wrap" id="top">
+
+<section class="hero">
+  <div>
+    <h1>Selected website work.</h1>
+    <p class="meta">Comedia · Prepared for Gen Digital · October 2026</p>
+  </div>
+  <p>Brand, structure, flows and design for companies with a lot of products and a lot of pages. Four sites, each shown at the size it was designed at. Click any screen to see the whole page.</p>
+</section>
+
+<!-- GEN -->
+<section class="case" id="gen">
+  <div class="case-text">
+    <p class="kicker">Gen Digital · in progress</p>
+    <h2>The blog is already built as a system</h2>
+    <h3>One post type, three categories, seven page types from three templates and one component library.</h3>
+    <p>We set it up that way on purpose. The card, the listing row and the article template already carry what the rest of gendigital.com needs. Threat research leads the structure, and the family of brands appears once, in the brand strip, rather than as separate sections.</p>
+    <p>Structure is locked and with Ben's team for the build. The visual direction shown here was well received and is still moving: the same components were tried in four palettes before anyone chose one.</p>
+    <ul class="services"><li>Information architecture</li><li>Templates and component library</li><li>Visual design</li></ul>
+  </div>
+  <div class="tiles">
+    <div class="tile pad t-gen"><div class="frame crop zoom" data-full="img/gen-home-dark.jpg"><img src="img/gen-home-dark.jpg" alt="Gen Threat Labs blog homepage, dark direction"></div><span class="cap">Home · Threat Labs direction</span></div>
+    <div class="pair">
+      <div class="tile pad t-gen2"><div class="frame crop zoom" data-full="img/gen-article.jpg"><img src="img/gen-article.jpg" alt="Gen blog article template with key takeaways and page outline"></div><span class="cap">Article</span></div>
+      <div class="tile pad t-gen"><div class="frame crop zoom" data-full="img/gen-home-pastel.jpg"><img src="img/gen-home-pastel.jpg" alt="Gen blog homepage, pastel direction"></div><span class="cap">Home · Gen Blog direction</span></div>
+    </div>
+    <div class="tile"><img class="plain zoom" src="img/gen-exploration.jpg" data-full="img/gen-exploration.jpg" alt="Visual exploration board: the same homepage in four palettes"><span class="cap">Same components, four palettes</span></div>
+    <div class="tile"><img class="plain zoom" src="img/gen-components.jpg" data-full="img/gen-components.jpg" alt="Gen blog component sheet: header, hero, cards, listing rows, report band, filters"><span class="cap">The parts every page is built from</span></div>
+  </div>
+</section>
+
+<!-- QORVO -->
+<section class="case" id="qorvo">
+  <div class="case-text">
+    <p class="kicker">Qorvo · launched 2026</p>
+    <h2>The whole site, from structure to pixels</h2>
+    <h3>Twelve product categories, seven solution areas, a design hub and a logged-in portal, all on one system.</h3>
+    <p>Qorvo makes radio and power chips for phones, cars, defense and infrastructure. The site had grown by expansion for years. Categories overlapped, the same product sat in several places, and customers could not find what they came for.</p>
+    <p>We interviewed sales, engineering and support, rebuilt the information architecture as a tree with cross-links, then designed every template: Solutions, Products, product detail, search, Design Hub, About and MyQorvo. Qorvo's own team built it from our files, reviewed weekly until launch.</p>
+    <ul class="services"><li>Information architecture</li><li>Flows and templates</li><li>Search and parametric filtering</li><li>MyQorvo portal</li><li>Visual design</li></ul>
+    <p class="note">Structure built to hold five to seven years of new product lines without a rebuild.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile pad t-qorvo"><div class="frame crop zoom" data-full="img/qorvo-home.jpg"><img src="img/qorvo-home.jpg" alt="Qorvo homepage"></div><span class="cap">Home</span></div>
+    <div class="tile pad light t-qorvo-light"><div class="frame tall zoom" data-full="img/qorvo-solutions.jpg"><img src="img/qorvo-solutions.jpg" alt="Qorvo Solutions landing page, full length"></div><span class="cap">Solutions · full page</span></div>
+    <div class="pair">
+      <div class="tile pad light t-qorvo-grey"><div class="frame crop zoom" data-full="img/qorvo-pdp.jpg"><img src="img/qorvo-pdp.jpg" alt="Qorvo product detail page"></div><span class="cap">Product detail</span></div>
+      <div class="tile pad t-qorvo"><div class="frame crop zoom" data-full="img/qorvo-search.jpg"><img src="img/qorvo-search.jpg" alt="Qorvo search results with a featured part"></div><span class="cap">Search</span></div>
+    </div>
+    <div class="tile pad light t-qorvo-light"><div class="frame crop zoom" data-full="img/qorvo-myqorvo.jpg"><img src="img/qorvo-myqorvo.jpg" alt="MyQorvo dashboard"></div><span class="cap">MyQorvo · logged in</span></div>
+    <div class="tile pad t-qorvo"><div class="frame tall zoom" data-full="img/qorvo-about.jpg"><img src="img/qorvo-about.jpg" alt="Qorvo About Us page, full length"></div><span class="cap">About · full page</span></div>
+  </div>
+</section>
+
+<!-- BINARLY -->
+<section class="case" id="binarly">
+  <div class="case-text">
+    <p class="kicker">Binarly · cybersecurity</p>
+    <h2>Redefining firmware and supply chain security</h2>
+    <h3>A security company has to look like it knows. Its readers are security engineers and the people who buy for them.</h3>
+    <p>Binarly finds vulnerabilities in firmware and software supply chains for customers like Cisco and Dell. We redesigned binarly.io end to end: the brand expression, the page system, advisories and research, newsletters, and an illustration language for a product you cannot photograph.</p>
+    <p>The same system now runs the sales deck and the product itself, which we are designing next.</p>
+    <ul class="services"><li>Research</li><li>UX and UI design</li><li>Visual design and illustration</li><li>Content system</li></ul>
+  </div>
+  <div class="tiles">
+    <div class="tile"><img class="plain zoom" src="img/bin-hero.jpg" data-full="img/bin-tall.jpg" alt="Binarly homepage hero"></div>
+    <div class="tile"><img class="plain zoom" src="img/bin-tall.jpg" data-full="img/bin-tall.jpg" alt="Binarly homepage, full length"></div>
+    <div class="tile"><img class="plain zoom" src="img/bin-illo.jpg" data-full="img/bin-illo.jpg" alt="Binarly platform illustration"></div>
+    <div class="tile"><img class="plain zoom" src="img/bin-pair.jpg" data-full="img/bin-pair.jpg" alt="Binarly advisory page and advisories hub"></div>
+    <div class="tile pad t-gen"><div class="frame crop zoom" data-full="img/bin-news.jpg"><img src="img/bin-news.jpg" alt="Binarly newsletters listing"></div><span class="cap">Newsletters</span></div>
+    <div class="tile"><img class="plain zoom" src="img/bin-deck.jpg" data-full="img/bin-deck.jpg" alt="Binarly sales deck on the same system"></div>
+    <div class="tile"><img class="plain zoom" src="img/bin-logo.jpg" data-full="img/bin-logo.jpg" alt="Binarly mark and social cards"></div>
+  </div>
+</section>
+
+<!-- CLIMATE WAREHOUSE -->
+<section class="case" id="climate">
+  <div class="case-text">
+    <p class="kicker">World Bank · Climate Warehouse</p>
+    <h2>A platform for governments to run carbon markets</h2>
+    <h3>Ministries, corporate partners and the public walk through one front door.</h3>
+    <p>The World Bank needed a public platform for Article 6 carbon market work under the Paris Agreement. What existed was static and read like a government document. We gave it a new structure, a brand presence, a custom CMS and blockchain-backed tracking of carbon credits, on its own domain.</p>
+    <p>Each program gets the same page: a color-coded accordion opens one section at a time, so a long policy page reads in minutes. The About page explains four work streams, the team, donors and partners without a wall of text.</p>
+    <ul class="services"><li>Information architecture</li><li>Visual and UX/UI design</li><li>Custom CMS</li></ul>
+  </div>
+  <div class="tiles">
+    <div class="tile pad t-cw"><div class="frame crop zoom" data-full="img/cw-home.jpg"><img src="img/cw-home.jpg" alt="Climate Warehouse homepage"></div><span class="cap">Home</span></div>
+    <div class="tile pad light t-cw-light"><div class="frame tall zoom" data-full="img/cw-detail.jpg"><img src="img/cw-detail.jpg" alt="Climate Warehouse work area page with color-coded accordion, full length"></div><span class="cap">Work area page · full page</span></div>
+    <div class="tile pad t-cw-green"><div class="frame crop zoom" data-full="img/cw-about.jpg"><img src="img/cw-about.jpg" alt="Climate Warehouse About page with mission, mandate and how-we-work infographic"></div><span class="cap">About</span></div>
+  </div>
+</section>
+
+<!-- ALSO -->
+<section class="pov" id="also">
+  <h2>Large systems for companies with many brands and teams</h2>
+  <div class="grid2">
+    <div class="card"><h4>Atlassian</h4><p>Mercury, a design system used across product teams that had each been doing their own thing.</p></div>
+    <div class="card"><h4>Vianai</h4><p>Product design system and the analytics product Mastercard now uses for fraud detection.</p></div>
+    <div class="card"><h4>Macy's and Bloomingdale's</h4><p>Consumer experiences at retail scale, mobile and in store, for two brands under one company.</p></div>
+    <div class="card"><h4>Google</h4><p>Partnered with Google since 2021 on trust, safety and compliance tooling, and on Gemini work.</p></div>
+  </div>
+  <p class="note">Also Samsung, Winnebago, Sharp/NEC, Thomson Reuters, Ericsson, Cisco, Vodafone and Zoom.</p>
+</section>
+
+<!-- NEXT -->
+<section class="pov" id="next">
+  <h2>What we would do with the whole site</h2>
+  <ol>
+    <li><b>One structure for many brands</b><span>Gen carries several brands and the site reads like that history. A structure that lets a brand sit in more than one place, and one component system every section runs on. We did this for Qorvo this year.</span></li>
+    <li><b>Threat research leads</b><span>It is the strongest thing Gen publishes. It should lead the site the way it leads the blog we are designing now.</span></li>
+    <li><b>Design and build side by side</b><span>Structure first, then templates locked and handed over as they are approved, the way we already work with Alicia and Ben.</span></li>
+  </ol>
+</section>
+
+<section class="close">
+  <h2>You'll love working with us.</h2>
+  <div class="contact"><b>Chris Basey</b>, CEO<br>chris@comediadesign.com<br>comediadesign.com<br>San Francisco</div>
+</section>
+
+</main>
+<footer><span>© Comedia Design 2026</span><span>Prepared for Gen Digital, October 2026</span></footer>
+
+<div class="lb" id="lb" hidden><button class="x" id="lbx" aria-label="Close">×</button><img id="lbimg" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),im=document.getElementById('lbimg');
+  function open(src,alt){im.src=src;im.alt=alt||'';lb.hidden=false;document.body.style.overflow='hidden';lb.scrollTop=0}
+  function close(){lb.hidden=true;document.body.style.overflow='';im.src=''}
+  document.querySelectorAll('.zoom').forEach(function(el){
+    el.addEventListener('click',function(){
+      var full=el.getAttribute('data-full')||(el.querySelector('img')||el).src;
+      var img=el.tagName==='IMG'?el:el.querySelector('img');
+      open(full,img&&img.alt);
+    });
+  });
+  lb.addEventListener('click',close);
+  document.getElementById('lbx').addEventListener('click',function(e){e.stopPropagation();close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
+})();
+</script>
+
+</body>
+</html>
